@@ -1,5 +1,9 @@
 Host poolpi
-  HostName 192.168.178.84
+  HostName 192.168.178.10
+  User pi
+
+Host poolpiw
+  HostName 192.168.178.11
   User pi
 
 Host tpi
