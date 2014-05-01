@@ -20,3 +20,5 @@ if [[ -e $bashrc && ! $overwrite ]]; then
 else
     echo '. ~/bin/dotfiles/bashrc' > $bashrc
 fi
+
+source $bashrc

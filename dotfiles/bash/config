@@ -59,5 +59,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # enable i-search (like reverse-i-serach) via ^s
-stty -ixon
-
+if [[ -x stty ]]; then
+    stty -ixon
+fi
