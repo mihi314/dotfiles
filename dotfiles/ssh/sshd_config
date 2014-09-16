@@ -50,6 +50,9 @@ HostbasedAuthentication no
 #IgnoreUserKnownHosts yes
 
 # To enable empty passwords, change to yes (NOT RECOMMENDED)
+# With this at no, when I am connecting locally, I still have to enter a 
+# passwort, even though my key is within the authorized_keys.
+# Setting it to yes fixes that.
 PermitEmptyPasswords yes
 
 # Change to yes to enable challenge-response passwords (beware issues with
