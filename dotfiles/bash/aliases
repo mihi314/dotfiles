@@ -3,11 +3,10 @@ alias ipy='ipython'
 alias x='chmod u+x'
 
 # utility
-alias reload='source ~/bin/dotfiles/bash/env && source ~/bin/dotfiles/bash/aliases'
-alias reload_all='source ~/bin/dotfiles/bashrc'
+alias reload='source ~/bin/dotfiles/bashrc'
 alias ea='$EDITOR ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
 alias ee='$EDITOR ~/bin/dotfiles/bash/env && reload'
-alias ec='$EDITOR ~/bin/dotfiles/bash/config && reload_all'
+alias ec='$EDITOR ~/bin/dotfiles/bash/config && reload'
 
 # apt
 alias ag='sudo apt-get'

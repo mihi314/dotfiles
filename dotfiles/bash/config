@@ -35,16 +35,18 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    source ~/bin/dotfiles/bash/git-branch-prompt
-
+prompt-command() {
     RED="\[\e[1;31m\]"
     GREEN="\[\e[1;32m\]"
     BLUE="\[\e[1;34m\]"
     OFF="\[\e[0m\]"
 
     PS1="${debian_chroot:+($debian_chroot)}${GREEN}\u@\h ${BLUE}\w${OFF}$(git-branch-prompt) ${BLUE}\$${OFF} "
+}
 
+if [ "$color_prompt" = yes ]; then
+    source ~/bin/dotfiles/bash/git-branch-prompt
+    PROMPT_COMMAND=prompt-command    
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
