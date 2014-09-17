@@ -17,6 +17,7 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+# when finally using zsh, switch to: https://github.com/jcorbin/zsh-git
 prompt-command() {
     RED="\[\e[1;31m\]"
     GREEN="\[\e[1;32m\]"
