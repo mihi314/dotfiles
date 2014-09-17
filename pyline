@@ -1,0 +1,12 @@
+#!/usr/bin/env python2
+
+import sys
+
+# e.g. print every third line:
+# cat txtfile | pyline "if i%3: print line"
+
+i = 0
+for line in sys.stdin:
+    line = l = line[:-1]
+    exec sys.argv[1]
+    i += 1
