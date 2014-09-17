@@ -1,0 +1,22 @@
+# functions for displaying some info about the current git repository on the promt
+# based on: http://thelucid.com/2008/12/02/git-setting-up-a-remote-repository-and-doing-an-initial-push/
+
+git-branch-name() {
+    git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3
+}
+
+git-branch-dirty() {
+    local status=$(git status --porcelain 2> /dev/null)
+    if [[ $status != "" ]]; then
+        printf "*"
+    fi
+}
+
+git-branch-prompt() {
+    local branch=`git-branch-name`
+    local dirty=`git-branch-dirty`
+    if [[ $branch ]]; then 
+        printf " (%s%s)" "$branch" "$dirty"
+    fi
+}
+
