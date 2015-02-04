@@ -17,7 +17,7 @@ Host m
 Host tum
   HostName cipgate.ph.tum.de
   Port 222
-  User fooey
+  User ga96nip
 
 Host tumproxy
   HostName cipgate.ph.tum.de
