@@ -1,6 +1,7 @@
 alias py='python'
 alias ipy='ipython'
 alias x='chmod u+x'
+alias subl='sublime_text'
 
 # utility
 alias reload='source ~/bin/dotfiles/bashrc'
