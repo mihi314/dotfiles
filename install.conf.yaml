@@ -1,0 +1,10 @@
+- clean: ['~']
+
+- link:
+    ~/.zshrc: zsh/zshrc
+    ~/.zshenv: zsh/zshenv
+    ~/.gitconfig: gitconfig
+    ~/.ssh/config: ssh/config
+
+- shell:
+    - git submodule update --init --recursive
