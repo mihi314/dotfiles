@@ -1,3 +1,7 @@
+[user]
+    name = Michael Engelhard
+    email = engelhard.michael+git@gmail.com
+
 [alias]
     c = commit -v
     s = status -sb
@@ -14,6 +18,5 @@
     # diff in last commit
     dlc = diff --cached HEAD^
 
-[user]
-	name = Michael Engelhard
-	email = engelhard.michael+git@gmail.com
+[push]
+	default = simple
