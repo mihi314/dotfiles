@@ -73,7 +73,8 @@ function gbt() {
 }
 
 # From http://github.com/suztomo/dotfiles
-function rmf(){
+# move files to trash
+function rmt(){
     for file in $*
     do
         __rm_single_file $file
