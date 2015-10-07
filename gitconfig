@@ -18,5 +18,8 @@
     # diff in last commit
     dlc = diff --cached HEAD^
 
+    # diff between staged changes and last commit
+    dc = diff --cached
+
 [push]
-	default = simple
+    default = simple
