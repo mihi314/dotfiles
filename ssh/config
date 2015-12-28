@@ -13,3 +13,14 @@ Host tpi
 Host m
   HostName mechascho.no-ip.org
   User pi
+
+Host tum
+  HostName cipgate.ph.tum.de
+  Port 222
+  User ga96nip
+
+Host tumproxy
+  HostName cipgate.ph.tum.de
+  Port 222
+  User ga96nip
+  DynamicForward 8000
