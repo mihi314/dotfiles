@@ -27,7 +27,7 @@ prompt-command() {
     PS1="${debian_chroot:+($debian_chroot)}${GREEN}\u@\h ${BLUE}\w${OFF}$(git-branch-prompt) ${BLUE}\$${OFF} "
 }
 
-source ~/bin/dotfiles/bash/git-branch-prompt
+source ~/dotfiles/bash/git-branch-prompt
 PROMPT_COMMAND=prompt-command    
 
 # If this is an xterm set the title to user@host:dir
