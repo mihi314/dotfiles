@@ -16,6 +16,7 @@ alias ipy='ipython'
 alias x='chmod u+x'
 alias utar='tar xvf'
 alias dstat='dstat -cdnpmgs --top-bio --top-cpu'
+alias fucking=sudo
 
 
 (from beneills' bashrc)

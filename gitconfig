@@ -25,4 +25,4 @@
     default = simple
 
 [core]
-    autocrlf = true
+    autocrlf = false
