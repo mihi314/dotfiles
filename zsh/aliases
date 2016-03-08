@@ -19,7 +19,7 @@ alias dstat='dstat -cdnpmgs --top-bio --top-cpu'
 alias fucking=sudo
 
 
-(from beneills' bashrc)
+# (from beneills' bashrc)
 # Find a file with a pattern in name:
 function ff() { find . -type f -iname '*'"$*"'*' ; }
 
