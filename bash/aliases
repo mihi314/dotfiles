@@ -5,9 +5,9 @@ alias subl='sublime_text'
 
 # utility
 alias reload='source ~/bin/dotfiles/bashrc'
-alias ea='$EDITOR ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
-alias ee='$EDITOR ~/bin/dotfiles/bash/env && reload'
-alias ec='$EDITOR ~/bin/dotfiles/bash/config && reload'
+alias ea='$EDITOR ~/dotfiles/bash/aliases && reload' # Edit aliases
+alias ee='$EDITOR ~/dotfiles/bash/env && reload'
+alias ec='$EDITOR ~/dotfiles/bash/config && reload'
 
 # apt
 alias ag='sudo apt-get'
@@ -15,7 +15,7 @@ alias agi='sudo apt-get install'
 
 
 # ls
-alias ls='ls -F --color=auto'
+alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -A'
 alias l.='ls -d .[^.]*'
@@ -73,7 +73,8 @@ function gbt() {
 }
 
 # From http://github.com/suztomo/dotfiles
-function rmf(){
+# move files to trash
+function rmt(){
     for file in $*
     do
         __rm_single_file $file

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# creates a bare git repository on my server and adds it as a remote
+# usage: ssh-m repository
+
+
+if [[ ! $1 ]]; then 
+    echo "Need a repository name as first argument" >&2
+    exit 1
+fi
+
+ssh m "git init --bare /git/$1.git/" || exit 2
+git remote add m "pi@m:/git/$1.git" || exit 3
+# git branch -u m/master
+# equivalent: git branch --set-upstream-to m/master

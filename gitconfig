@@ -1,0 +1,28 @@
+[user]
+    name = Michael Engelhard
+    email = engelhard.michael+git@gmail.com
+
+[alias]
+    c = commit -v
+    s = status -sb
+    co = checkout
+    p = push
+    f = fetch
+    fm = pull
+
+    # log
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    ld  = log --topo-order --stat --patch --full-diff --pretty=format:'%C(bold)%C(yellow)Commit:%C(reset) %C(yellow)%H%C(red)%d%n%C(bold)%C(yellow)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)%C(yellow)Date:%C(reset)   %C(blue)%ai (%ar)%C(reset)%n%+B'
+
+    # diff in last commit
+    dlc = diff --cached HEAD^
+
+    # diff between staged changes and last commit
+    dc = diff --cached
+
+[push]
+    default = simple
+
+[core]
+    autocrlf = input
