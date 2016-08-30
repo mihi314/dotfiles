@@ -13,6 +13,7 @@ alias s=subl3
 alias g=git
 alias py='python'
 alias ipy='ipython'
+alias ipy2='ipython2'
 alias x='chmod u+x'
 alias utar='tar xvf'
 alias dstat='dstat -cdnpmgs --top-bio --top-cpu'
