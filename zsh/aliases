@@ -18,7 +18,8 @@ alias x='chmod u+x'
 alias utar='tar xvf'
 alias dstat='dstat -cdnpmgs --top-bio --top-cpu'
 alias fucking=sudo
-
+alias la='ls -a'
+alias lla='ll -a'
 
 # (from beneills' bashrc)
 # Find a file with a pattern in name:
