@@ -4,7 +4,7 @@ alias x='chmod u+x'
 alias subl='sublime_text'
 
 # utility
-alias reload='source ~/bin/dotfiles/bashrc'
+alias reload='source ~/.bashrc'
 alias ea='$EDITOR ~/dotfiles/bash/aliases && reload' # Edit aliases
 alias ee='$EDITOR ~/dotfiles/bash/env && reload'
 alias ec='$EDITOR ~/dotfiles/bash/config && reload'
