@@ -22,8 +22,8 @@ alias la='ls -a'
 alias lla='ll -a'
 
 # (from beneills' bashrc)
-# Find a file with a pattern in name:
-function ff() { find . -type f -iname '*'"$*"'*' ; }
+# Find a file/folder with a pattern in name:
+function ff() { find . -iname '*'"$*"'*' ; }
 
 # Swap 2 filenames around, if they exist (from Uzi's bashrc).
 function swap()
