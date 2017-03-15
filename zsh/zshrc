@@ -70,3 +70,13 @@ unsetopt beep
 
 # To prevent % after every command in conemu. see: http://superuser.com/questions/645599/why-is-a-percent-sign-appearing-before-each-prompt-on-zsh-in-windows
 unsetopt PROMPT_SP
+
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
+source /etc/profile.d/autojump.zsh
+
+# for colored output of 'tree'
+eval $(dircolors)
+

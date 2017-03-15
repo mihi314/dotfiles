@@ -8,6 +8,7 @@ alias ec='$EDITOR ~/dotfiles/zsh/zshrc && reload'
 # to make aliases work with sudo
 # whitespace ---v
 alias sudo='sudo '
+alias doch='sudo !!'
 
 alias s=subl3
 alias g=git
@@ -20,6 +21,9 @@ alias dstat='dstat -cdnpmgs --top-bio --top-cpu'
 alias fucking=sudo
 alias la='ls -a'
 alias lla='ll -a'
+
+alias python2-default='export path=(~/python2-bin $path)'
+
 
 # (from beneills' bashrc)
 # Find a file/folder with a pattern in name:
