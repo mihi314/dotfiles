@@ -4,8 +4,8 @@
 # What ports, IPs and protocols we listen for
 Port 22
 # Use these options to restrict which interfaces/protocols sshd will bind to
-#ListenAddress ::
-#ListenAddress 0.0.0.0
+ListenAddress ::
+ListenAddress 0.0.0.0
 Protocol 2
 # HostKeys for protocol version 2
 HostKey /etc/ssh/ssh_host_rsa_key
@@ -39,6 +39,13 @@ PasswordAuthentication no
 Match Address 192.168.0.0/16
     PasswordAuthentication yes
 Match
+Match Address fe80::%eth0/64
+    PasswordAuthentication yes
+Match
+# had to enable Unique Local Addresses in the fritzbox
+Match Address fd00::/8
+    PasswordAuthentication yes
+Match
 
 # Don't read the user's ~/.rhosts and ~/.shosts files
 IgnoreRhosts yes
@@ -50,9 +57,6 @@ HostbasedAuthentication no
 #IgnoreUserKnownHosts yes
 
 # To enable empty passwords, change to yes (NOT RECOMMENDED)
-# With this at no, when I am connecting locally, I still have to enter a 
-# passwort, even though my key is within the authorized_keys.
-# Setting it to yes fixes that.
 PermitEmptyPasswords yes
 
 # Change to yes to enable challenge-response passwords (beware issues with

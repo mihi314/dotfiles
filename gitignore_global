@@ -1,0 +1,66 @@
+# more #
+#########
+sftp-config.json
+.vscode
+
+# Compiled source #
+###################
+#*.com
+#*.class
+#*.dll
+#*.exe
+#*.o
+#*.so
+*.pyc
+*.pyo
+
+# Packages #
+############
+#*.7z
+#*.dmg
+#*.gz
+#*.iso
+#*.jar
+#*.rar
+#*.tar
+#*.zip
+
+# Logs and databases #
+######################
+#*.log
+#*.sql
+#*.sqlite
+
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+desktop.ini
+
+# Eclipse #
+###########
+*.pydevproject
+.project
+.metadata
+# bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath

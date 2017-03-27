@@ -71,4 +71,18 @@ unsetopt beep
 # To prevent % after every command in conemu. see: http://superuser.com/questions/645599/why-is-a-percent-sign-appearing-before-each-prompt-on-zsh-in-windows
 unsetopt PROMPT_SP
 
-source /usr/share/autojump/autojump.zsh
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
+# on archlinux
+if [[ -e /etc/profile.d/autojump.zsh ]]; then
+    source /etc/profile.d/autojump.zsh
+fi
+# on ubuntu
+if [[ -e /usr/share/autojump/autojump.zsh ]]; then
+    source /usr/share/autojump/autojump.zsh
+fi
+
+# for colored output of 'tree'
+eval $(dircolors)
