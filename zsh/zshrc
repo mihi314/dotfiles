@@ -70,3 +70,5 @@ unsetopt beep
 
 # To prevent % after every command in conemu. see: http://superuser.com/questions/645599/why-is-a-percent-sign-appearing-before-each-prompt-on-zsh-in-windows
 unsetopt PROMPT_SP
+
+source /usr/share/autojump/autojump.zsh
