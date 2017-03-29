@@ -24,3 +24,7 @@ Host tumproxy
   Port 222
   User ga96nip
   DynamicForward 8000
+
+Host t38
+  HostName 10.152.219.233
+  User mengelhard

@@ -22,7 +22,10 @@ alias fucking=sudo
 alias la='ls -a'
 alias lla='ll -a'
 
+# archlinux
 alias python2-default='export path=(~/python2-bin $path)'
+alias system="sudo systemctl"
+alias journal="journalctl"
 
 
 # (from beneills' bashrc)
@@ -71,3 +74,4 @@ function maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 
 # Create a ZIP archive of a file or folder.
 function makezip() { zip -r "${1%%/}.zip" "$1" ; }
+

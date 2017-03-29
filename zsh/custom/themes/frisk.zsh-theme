@@ -1,4 +1,6 @@
-PROMPT=$'%{$fg[green]%}%/%{$reset_color%} $(git_prompt_info)%{$fg_bold[black]%}[%n@%m]%{$reset_color%} %{$fg_bold[black]%}[%T]%{$reset_color%}
+if [ $SSH_CONNECTION ]; then SSH="%{$fg[red]%}"; else SSH=""; fi
+
+PROMPT=$'%{$fg[green]%}%/%{$reset_color%} $(git_prompt_info)%{$fg_bold[black]%}[%n@%{$SSH%}%m%{$fg_bold[black]%}]%{$reset_color%} %{$fg_bold[black]%}[%T]%{$reset_color%}
 %{$fg_bold[black]%}>%{$reset_color%} '
 
 PROMPT2="%{$fg_blod[black]%}%_> %{$reset_color%}"
