@@ -6,6 +6,10 @@
     ~/.bashrc: bash/bashrc
     ~/.gitconfig: gitconfig
     ~/.ssh/config: ssh/config
+    ~/.vimrc: vim/vimrc
+    ~/.vim/colors:
+      create: true
+      path: vim/colors
 
 - shell:
     - git submodule update --init --recursive
