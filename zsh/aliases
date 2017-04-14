@@ -27,6 +27,7 @@ alias python2-default='export path=(~/python2-bin $path)'
 alias system="sudo systemctl"
 alias journal="journalctl"
 
+alias go="gnome-open"
 
 # (from beneills' bashrc)
 # Find a file/folder with a pattern in name:
