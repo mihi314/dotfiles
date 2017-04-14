@@ -11,3 +11,4 @@
 
 - shell:
     - git submodule update --init --recursive
+    - mkdir ~/.vim/undo
