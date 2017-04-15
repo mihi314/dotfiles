@@ -11,4 +11,10 @@
 
 - shell:
     - git submodule update --init --recursive
-    - mkdir ~/.vim/undo
+    - mkdir -p ~/.vim/undo
+    - 
+      command: vim +PlugInstall +qall
+      stdin: true
+      stdout: true 
+      stderr: true
+
