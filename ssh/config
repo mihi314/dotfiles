@@ -28,3 +28,6 @@ Host tumproxy
 Host t38
   HostName 10.152.219.233
   User mengelhard
+  ForwardX11 yes
+  ForwardX11Trusted yes  
+
