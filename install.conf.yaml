@@ -8,6 +8,8 @@
     ~/.ssh/config: ssh/config
     ~/.vimrc: vim/vimrc
     ~/.vim: vim
+    ~/.local/share/kxmlgui5/okular/part.rc: okular/part.rc
+    ~/.local/share/kxmlgui5/okular/shell.rc: okular/shell.rc
 
 - shell:
     - git submodule update --init --recursive
