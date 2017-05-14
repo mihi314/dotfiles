@@ -44,12 +44,6 @@ nmap <leader>w :w!<cr>
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
-" copy pasting, from: https://superuser.com/a/189198
-vmap <C-c> "+yi
-vmap <C-x> "+c
-vmap <C-v> c<ESC>"+p
-imap <C-v> <C-r><C-o>+
-
 " plugins
 call plug#begin()
     Plug 'kana/vim-textobj-user'
@@ -311,6 +305,24 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Clipboard
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" copy-pasting, from: https://superuser.com/a/189198
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
+
+" use + register (the one ctrl+c uses) for unnamed yanks when availablie
+" autoslect automatically writes selections into * register (the one middle mouse button uses)
+if has('clipboard')
+    if has('unnamedplus')
+        set clipboard=unnamed,unnamedplus,autoselect
+    else
+        set clipboard=unnamed,autoselect
+    endif
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
