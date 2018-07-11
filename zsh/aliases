@@ -21,13 +21,17 @@ alias dstat='dstat -cdnpmgs --top-bio --top-cpu'
 alias fucking=sudo
 alias la='ls -a'
 alias lla='ll -a'
+alias help='run-help'
+alias skype='apulse skypeforlinux'
+alias n='nvidia-smi'
 
 # archlinux
 alias python2-default='export path=(~/python2-bin $path)'
 alias system="sudo systemctl"
-alias journal="journalctl"
+alias journal="journalctl -e --boot"
+alias journaln="journal -u NetworkManager -f"
 
-alias go="gnome-open"
+alias go="xdg-open"
 
 # (from beneills' bashrc)
 # Find a file/folder with a pattern in name:
@@ -76,3 +80,8 @@ function maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 # Create a ZIP archive of a file or folder.
 function makezip() { zip -r "${1%%/}.zip" "$1" ; }
 
+function go2() {
+    for file in "$@"; do
+        xdg-open "$1"
+    done
+}
