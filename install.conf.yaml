@@ -12,11 +12,12 @@
     ~/.local/share/kxmlgui5/okular/shell.rc: okular/shell.rc
 
 - shell:
-    - git submodule update --init --recursive
+    - git submodule init
+    - git submodule update --recursive
     - mkdir -p ~/.vim/undo
     - 
       command: vim +PlugInstall +qall
       stdin: true
       stdout: true 
       stderr: true
-
+    - ./fzf/install --bin
