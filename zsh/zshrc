@@ -77,3 +77,9 @@ fi
 
 # for colored output of 'tree'
 eval "$(dircolors)"
+
+# https://github.com/junegunn/fzf
+# command-line fuzzy finder
+source ~/dotfiles/fzf/shell/completion.zsh
+source ~/dotfiles/fzf/shell/key-bindings.zsh
+

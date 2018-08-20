@@ -20,4 +20,4 @@
       stdin: true
       stdout: true 
       stderr: true
-
+    - ./fzf/install --bin
