@@ -10,7 +10,7 @@ alias ec='$EDITOR ~/dotfiles/zsh/zshrc && reload'
 alias sudo='sudo '
 alias doch='sudo !!'
 
-alias s=subl3
+alias s=subl
 alias g=git
 alias py='python'
 alias ipy='ipython'
