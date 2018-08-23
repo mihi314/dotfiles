@@ -24,6 +24,7 @@ alias lla='ll -a'
 alias help='run-help'
 alias skype='apulse skypeforlinux'
 alias n='nvidia-smi'
+alias pycharm='pycharm-professional'
 
 # archlinux
 alias python2-default='export path=(~/python2-bin $path)'
