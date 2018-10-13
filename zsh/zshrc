@@ -83,3 +83,4 @@ eval "$(dircolors)"
 source ~/dotfiles/fzf/shell/completion.zsh
 source ~/dotfiles/fzf/shell/key-bindings.zsh
 
+bindkey '^U' backward-kill-line
