@@ -80,6 +80,8 @@ fi
 # for colored output of 'tree'
 eval "$(dircolors)"
 
+bindkey '^U' backward-kill-line
+
 # https://github.com/junegunn/fzf
 # command-line fuzzy finder
 source ~/dotfiles/fzf/shell/completion.zsh
@@ -98,5 +100,4 @@ fi
 if [[ -e ~/miniconda3/etc/profile.d/conda.sh ]]; then
     source ~/miniconda3/etc/profile.d/conda.sh
 fi
-
 
