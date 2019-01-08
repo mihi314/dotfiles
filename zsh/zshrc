@@ -43,6 +43,8 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(zsh-syntax-highlighting)
 
 # User configuration
+# for bash completion script support
+autoload -U +X bashcompinit && bashcompinit
 
 export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/dotfiles/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -82,4 +84,19 @@ eval "$(dircolors)"
 # command-line fuzzy finder
 source ~/dotfiles/fzf/shell/completion.zsh
 source ~/dotfiles/fzf/shell/key-bindings.zsh
+
+# gsutil command completion
+if [[ -e /usr/share/autojump/autojump.zsh ]]; then
+    source /usr/share/google-cloud-sdk/completion.zsh.inc
+fi
+
+# snakemake command completion
+#if type snakemake &> /dev/null; then
+#    $(snakemake --bash-completion)
+#fi
+
+if [[ -e ~/miniconda3/etc/profile.d/conda.sh ]]; then
+    source ~/miniconda3/etc/profile.d/conda.sh
+fi
+
 
