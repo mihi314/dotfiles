@@ -1,2 +1,2 @@
 typeset -U path
-path=(~/Android/Sdk/platform-tools $path)
+path=(~/miniconda3/bin ~/Android/Sdk/platform-tools $path)
