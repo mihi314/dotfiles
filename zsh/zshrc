@@ -90,7 +90,7 @@ source ~/dotfiles/fzf/shell/completion.zsh
 source ~/dotfiles/fzf/shell/key-bindings.zsh
 
 # gsutil command completion
-if [[ -e /usr/share/autojump/autojump.zsh ]]; then
+if [[ -e /usr/share/google-cloud-sdk/completion.zsh.inc ]]; then
     source /usr/share/google-cloud-sdk/completion.zsh.inc
 fi
 
