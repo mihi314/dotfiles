@@ -10,6 +10,10 @@ Host tpi
   HostName 192.168.178.70
   User pi
 
+Host wpi
+  HostName 192.168.178.24
+  User pi
+
 Host m
   HostName mechascho.no-ip.org
   User pi
