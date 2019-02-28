@@ -95,9 +95,7 @@ if [[ -e /usr/share/google-cloud-sdk/completion.zsh.inc ]]; then
 fi
 
 # snakemake command completion
-#if type snakemake &> /dev/null; then
-#    $(snakemake --bash-completion)
-#fi
+compdef _gnu_generic snakemake
 
 if [[ -e ~/miniconda3/etc/profile.d/conda.sh ]]; then
     source ~/miniconda3/etc/profile.d/conda.sh
