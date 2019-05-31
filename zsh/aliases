@@ -29,6 +29,9 @@ alias system="sudo systemctl"
 alias journal="journalctl -e --boot"
 alias journaln="journal -u NetworkManager -f"
 
+# update dotfiles
+alias ud='(cd ~/dotfiles && git pull) && install-dotfiles'
+
 alias go="xdg-open"
 alias coa='conda activate'
 alias cod='conda deactivate'
