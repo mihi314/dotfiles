@@ -95,3 +95,9 @@ if [[ -e ~/miniconda3/etc/profile.d/conda.sh ]]; then
     source ~/miniconda3/etc/profile.d/conda.sh
 fi
 
+# aliases for quickly editing zshrc etc
+alias reload='source ~/.zshrc; source ~/.zshenv'
+alias ec='$EDITOR ~/dotfiles/zsh/zshrc && reload'
+alias ea='$EDITOR ~/dotfiles/zsh/aliases && reload'
+alias ee='$EDITOR ~/dotfiles/zsh/zshenv && reload'
+alias eel='$EDITOR ~/.zshenv-local && reload'

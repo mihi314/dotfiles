@@ -1,11 +1,3 @@
-
-# utility
-alias reload='source ~/dotfiles/zsh/zshrc; source ~/dotfiles/zsh/zshenv'
-alias ea='$EDITOR ~/dotfiles/zsh/aliases && reload' # Edit aliases
-alias ee='$EDITOR ~/dotfiles/zsh/zshenv && reload'
-alias eel='$EDITOR ~/.zshenv-local && reload'
-alias ec='$EDITOR ~/dotfiles/zsh/zshrc && reload'
-
 # to make aliases work with sudo
 # whitespace ---v
 alias sudo='sudo '

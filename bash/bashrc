@@ -1,3 +1,62 @@
-. ~/dotfiles/bash/env
-. ~/dotfiles/bash/config
-. ~/dotfiles/bash/aliases
+# don't put duplicate lines or lines starting with space in the history.
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# when finally using zsh, switch to: https://github.com/jcorbin/zsh-git
+prompt-command() {
+    RED="\[\e[1;31m\]"
+    GREEN="\[\e[1;32m\]"
+    BLUE="\[\e[1;34m\]"
+    OFF="\[\e[0m\]"
+
+    PS1="${debian_chroot:+($debian_chroot)}${GREEN}\u@\h ${BLUE}\w${OFF}$(git-branch-prompt) ${BLUE}\$${OFF} "
+}
+
+source ~/dotfiles/bash/git-branch-prompt
+PROMPT_COMMAND=prompt-command    
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+# enable i-search (like reverse-i-serach) via ^s
+if [[ -x stty ]]; then
+    stty -ixon
+fi
+
+source ~/dotfiles/zsh/aliases
+source ~/dotfiles/zsh/zshenv
+
+# aliases for quickly editing bashrc etc
+alias reload='source ~/.bashrc'
+alias ec='$EDITOR ~/dotfiles/bash/bashrc && reload'
+alias ea='$EDITOR ~/dotfiles/zsh/aliases && reload'
+alias ee='$EDITOR ~/dotfiles/zsh/zshenv && reload'
+alias eel='$EDITOR ~/.zshenv-local && reload'
