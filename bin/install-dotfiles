@@ -13,5 +13,6 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 set +e
 for conf in ${DEFAULT_CONFIG_PREFIX} ${@}; do
+    echo ${conf}:
     "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${conf}${CONFIG_SUFFIX}"
 done

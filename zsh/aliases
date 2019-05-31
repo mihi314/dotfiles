@@ -29,9 +29,6 @@ alias system="sudo systemctl"
 alias journal="journalctl -e --boot"
 alias journaln="journal -u NetworkManager -f"
 
-# update dotfiles
-alias ud='(cd ~/dotfiles && git pull) && install-dotfiles'
-
 alias go="xdg-open"
 alias coa='conda activate'
 alias cod='conda deactivate'
@@ -40,6 +37,14 @@ alias cod='conda deactivate'
 alias drun='nvidia-docker run -ti --net=host --rm -v /home:/home -v /mnt:/mnt -u $(id -u):$(id -g) -w $PWD -e HOME=$HOME -e CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt -e GS_ACCESS_KEY_ID -e GS_SECRET_ACCESS_KEY -e GDAL_DISABLE_READDIR_ON_OPEN=YES -e CPL_VSIL_CURL_ALLOWED_EXTENSIONS -e MAX_TMPFILE_SIZE=1000 -e PYTHONPATH $DOCKER_IMAGE'
 alias gdalinfo='gdalinfo --config GDAL_PAM_ENABLED NO' 
 alias qgis3='flatpak run org.qgis.qgis'
+
+# update dotfiles
+function ud()
+{
+    (cd ~/dotfiles && git pull) &&
+    install-dotfiles "$@" &&
+    reload
+}
 
 # (from beneills' bashrc)
 # Find a file/folder with a pattern in name:

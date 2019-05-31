@@ -55,8 +55,9 @@ source ~/dotfiles/zsh/aliases
 source ~/dotfiles/zsh/zshenv
 
 # aliases for quickly editing bashrc etc
-alias reload='source ~/.bashrc'
+function reload() { source ~/.bashrc; }
 alias ec='$EDITOR ~/dotfiles/bash/bashrc && reload'
 alias ea='$EDITOR ~/dotfiles/zsh/aliases && reload'
 alias ee='$EDITOR ~/dotfiles/zsh/zshenv && reload'
 alias eel='$EDITOR ~/.zshenv-local && reload'
+
