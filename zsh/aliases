@@ -3,7 +3,6 @@
 alias sudo='sudo '
 alias doch='sudo !!'
 
-alias s=subl
 alias g=git
 alias py='python'
 alias ipy='ipython'
@@ -12,13 +11,17 @@ alias x='chmod u+x'
 alias h='history'
 alias utar='tar xvf'
 alias dstat='dstat -cdnpmgs --top-bio --top-cpu -t 5'
+alias ls='ls --color=auto'
+alias ll='ls -lh'
 alias la='ls -a'
 alias lla='ll -a'
+
 alias help='run-help'
 alias skype='apulse skypeforlinux'
 alias n='nvidia-smi'
 alias n.='nautilus .'
 alias pycharm='pycharm-professional'
+alias s=subl
 
 # archlinux
 alias python2-default='export path=(~/python2-bin $path)'
