@@ -2,6 +2,7 @@
 #########
 sftp-config.json
 .vscode
+.idea
 
 # Compiled source #
 ###################

@@ -24,6 +24,7 @@ alias lla='ll -a'
 alias help='run-help'
 alias skype='apulse skypeforlinux'
 alias n='nvidia-smi'
+alias n.='nautilus .'
 alias pycharm='pycharm-professional'
 
 # archlinux
@@ -37,8 +38,9 @@ alias coa='conda activate'
 alias cod='conda deactivate'
 
 # terraloupe
-alias drun='docker run -ti --rm -v /home:/home -v /mnt:/mnt -u $(id -u):$(id -g) -w $PWD -e HOME=$HOME -e CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt -e GS_ACCESS_KEY_ID=$GS_ACCESS_KEY_ID -e GS_SECRET_ACCESS_KEY=$GS_SECRET_ACCESS_KEY -e GDAL_DISABLE_READDIR_ON_OPEN=YES -e CPL_VSIL_CURL_ALLOWED_EXTENSIONS=".tif .vrt" -e MAX_TMPFILE_SIZE=1000 -e PYTHONPATH=$PYTHONPATH $DOCKER_IMAGE'
+alias drun='nvidia-docker run -ti --net=host --rm -v /home:/home -v /mnt:/mnt -u $(id -u):$(id -g) -w $PWD -e HOME=$HOME -e CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt -e GS_ACCESS_KEY_ID=$GS_ACCESS_KEY_ID -e GS_SECRET_ACCESS_KEY=$GS_SECRET_ACCESS_KEY -e GDAL_DISABLE_READDIR_ON_OPEN=YES -e CPL_VSIL_CURL_ALLOWED_EXTENSIONS="$CPL_VSIL_CURL_ALLOWED_EXTENSIONS" -e MAX_TMPFILE_SIZE=1000 -e PYTHONPATH=$PYTHONPATH $DOCKER_IMAGE'
 alias gdalinfo='gdalinfo --config GDAL_PAM_ENABLED NO' 
+alias qgis3='flatpak run org.qgis.qgis'
 
 # (from beneills' bashrc)
 # Find a file/folder with a pattern in name:

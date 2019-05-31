@@ -8,6 +8,7 @@
     ~/.ssh/config: ssh/config
     ~/.vimrc: vim/vimrc
     ~/.vim: vim
+    ~/.tmux.conf: tmux.conf
     ~/.local/share/kxmlgui5/okular/part.rc: okular/part.rc
     ~/.local/share/kxmlgui5/okular/shell.rc: okular/shell.rc
 
