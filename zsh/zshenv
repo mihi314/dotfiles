@@ -1,2 +1,9 @@
-typeset -U path
-path=(~/miniconda3/bin ~/Android/Sdk/platform-tools $path)
+export PATH="$PATH:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/dotfiles/bin"
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
+export EDITOR='vim'
+
+# local zshenv which does not get committed
+source ~/.zshenv-local

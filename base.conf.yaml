@@ -5,16 +5,13 @@
     ~/.zshenv: zsh/zshenv
     ~/.bashrc: bash/bashrc
     ~/.gitconfig: gitconfig
-    ~/.ssh/config: ssh/config
     ~/.vimrc: vim/vimrc
     ~/.vim: vim
     ~/.tmux.conf: tmux.conf
-    ~/.local/share/kxmlgui5/okular/part.rc: okular/part.rc
-    ~/.local/share/kxmlgui5/okular/shell.rc: okular/shell.rc
 
 - shell:
-    - git submodule init
-    - git submodule update --recursive
+    - git submodule update --init --recursive
+    - touch ~/.zshenv-local
     - mkdir -p ~/.vim/undo
     - mkdir -p ~/.ssh && chmod 700 ~/.ssh
     - 

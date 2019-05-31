@@ -1,0 +1,8 @@
+- link:
+    ~/.ssh/config: ssh/config
+    ~/.local/share/kxmlgui5/okular/part.rc:
+        path: okular/part.rc
+        if: "[[ -d ~/.local/share/kxmlgui5/okular/ ]]"
+    ~/.local/share/kxmlgui5/okular/shell.rc:
+        path: okular/shell.rc
+        if: "[[ -d ~/.local/share/kxmlgui5/okular/ ]]"

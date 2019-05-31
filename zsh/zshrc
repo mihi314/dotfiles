@@ -46,7 +46,7 @@ plugins=(zsh-syntax-highlighting)
 # for bash completion script support
 autoload -U +X bashcompinit && bashcompinit
 
-export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/dotfiles/bin"
+export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -57,18 +57,12 @@ if [[ -e /etc/profile.d/vte.sh ]]; then
     source /etc/profile.d/vte.sh
 fi
 
-export EDITOR='vim'
-
 unsetopt beep
 
 # To prevent % after every command in conemu. see: http://superuser.com/questions/645599/why-is-a-percent-sign-appearing-before-each-prompt-on-zsh-in-windows
 #setopt PROMPT_CR
 #setopt PROMPT_SP
 export PROMPT_EOL_MARK=""
-
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
 
 # on archlinux
 if [[ -e /etc/profile.d/autojump.zsh ]]; then
