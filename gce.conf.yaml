@@ -1,0 +1,5 @@
+- shell:
+    # set default shell to zsh
+    # gce instances don't have a password set by default, which chsh does not like
+    # so we set one temporarily
+    - echo -e "a\na" | sudo passwd $USER && echo a | chsh -s /bin/zsh $USER && sudo passwd -d $USER
