@@ -3,6 +3,9 @@
 sftp-config.json
 .vscode
 .idea
+.mypy_cache/
+.pyre/
+.pytype/
 
 # Compiled source #
 ###################
