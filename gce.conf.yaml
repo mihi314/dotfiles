@@ -1,5 +1,5 @@
 - shell:
-    - sudo apt install zsh
+    - sudo apt install --assume-yes zsh
     # set default shell to zsh
     # gce instances don't have a password set by default, which chsh does not like
     # so we set one temporarily
