@@ -6,6 +6,7 @@ sftp-config.json
 .mypy_cache/
 .pyre/
 .pytype/
+.pytest_cache/
 
 # Compiled source #
 ###################

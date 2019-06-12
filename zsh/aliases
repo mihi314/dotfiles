@@ -39,7 +39,7 @@ alias gdalinfo='gdalinfo --config GDAL_PAM_ENABLED NO'
 alias qgis3='flatpak run org.qgis.qgis'
 
 # update dotfiles
-function ud()
+function udf()
 {
     (cd ~/dotfiles && git pull) &&
     install-dotfiles "$@" &&
