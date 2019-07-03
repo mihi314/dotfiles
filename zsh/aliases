@@ -29,7 +29,6 @@ alias system="sudo systemctl"
 alias journal="journalctl -e --boot"
 alias journaln="journal -u NetworkManager -f"
 
-alias go="xdg-open"
 alias coa='conda activate'
 alias cod='conda deactivate'
 
@@ -37,6 +36,8 @@ alias cod='conda deactivate'
 alias drun='nvidia-docker run -ti --net=host --rm -v /home:/home -v /mnt:/mnt -u $(id -u):$(id -g) -w $PWD -e HOME=$HOME -e CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt -e GS_ACCESS_KEY_ID -e GS_SECRET_ACCESS_KEY -e GDAL_DISABLE_READDIR_ON_OPEN=YES -e CPL_VSIL_CURL_ALLOWED_EXTENSIONS -e MAX_TMPFILE_SIZE=1000 -e PYTHONPATH $DOCKER_IMAGE'
 alias gdalinfo='gdalinfo --config GDAL_PAM_ENABLED NO' 
 alias qgis3='flatpak run org.qgis.qgis'
+alias tft='terra flow task'
+alias tfw='terra flow workflow'
 
 # update dotfiles
 function udf()
@@ -93,8 +94,12 @@ function maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 # Create a ZIP archive of a file or folder.
 function makezip() { zip -r "${1%%/}.zip" "$1" ; }
 
-function go2() {
+function go() {
     for file in "$@"; do
+        # if we try to open a google storage url, open it in the browser
+        if [[ $file = gs://* ]]; then
+            file="https://console.cloud.google.com/storage/browser/${file#gs://}"
+        fi
         xdg-open "$file"
     done
 }
