@@ -18,8 +18,9 @@ alias lla='ll -a'
 
 alias help='run-help'
 alias skype='apulse skypeforlinux'
-alias n='nvidia-smi'
+alias ns='nvidia-smi'
 alias n.='nautilus .'
+alias n='nautilus'
 alias pycharm='pycharm-professional'
 alias s=subl
 
