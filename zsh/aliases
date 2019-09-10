@@ -15,6 +15,7 @@ alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -a'
 alias lla='ll -a'
+alias reload2='exec $SHELL -l'
 
 alias help='run-help'
 alias skype='apulse skypeforlinux'
@@ -29,9 +30,14 @@ alias python2-default='export path=(~/python2-bin $path)'
 alias system="sudo systemctl"
 alias journal="journalctl -e --boot"
 alias journaln="journal -u NetworkManager -f"
+# https://askubuntu.com/a/858621
+alias sleep-off='sudo systemctl --runtime mask sleep.target suspend.target hibernate.target hybrid-sleep.target'
+alias sleep-on='sudo systemctl --runtime unmask sleep.target suspend.target hibernate.target hybrid-sleep.target'
 
-alias coa='conda activate'
-alias cod='conda deactivate'
+
+# for the PYTHONNOUSERSITE thing see https://github.com/conda/conda/issues/448 
+alias coa='export PYTHONNOUSERSITE=True; conda activate'
+alias cod='export PYTHONNOUSERSITE=False; conda deactivate'
 
 # terraloupe
 alias drun='nvidia-docker run -ti --net=host --rm -v /home:/home -v /mnt:/mnt -u $(id -u):$(id -g) -w $PWD -e HOME=$HOME -e CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt -e GS_ACCESS_KEY_ID -e GS_SECRET_ACCESS_KEY -e GDAL_DISABLE_READDIR_ON_OPEN=YES -e CPL_VSIL_CURL_ALLOWED_EXTENSIONS -e MAX_TMPFILE_SIZE=1000 -e PYTHONPATH $DOCKER_IMAGE'
