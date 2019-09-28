@@ -19,9 +19,8 @@ alias reload2='exec $SHELL -l'
 
 alias help='run-help'
 alias skype='apulse skypeforlinux'
-alias ns='nvidia-smi'
-alias n.='nautilus .'
-alias n='nautilus'
+alias n='nvidia-smi'
+alias n.='go .'
 alias pycharm='pycharm-professional'
 alias s=subl
 
