@@ -1,4 +1,9 @@
 [
-	{ "keys": ["ctrl+q"], "command": "toggle_comment", "args": { "block": false } },
-	{ "keys": ["ctrl+shift+q"], "command": "toggle_comment", "args": { "block": true } }
+    { "keys": ["ctrl+q"], "command": "toggle_comment", "args": { "block": false } },
+    { "keys": ["ctrl+shift+q"], "command": "toggle_comment", "args": { "block": true } },
+    { "keys": ["f1"], "command": "next_bookmark" },
+    { "keys": ["shift+f1"], "command": "prev_bookmark" },
+    { "keys": ["ctrl+f1"], "command": "toggle_bookmark" },
+    { "keys": ["ctrl+shift+f1"], "command": "clear_bookmarks" },
+    { "keys": ["alt+f1"], "command": "select_all_bookmarks" },
 ]

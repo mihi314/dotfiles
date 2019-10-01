@@ -1,13 +1,32 @@
 - link:
     ~/.ssh/config: ssh/config
+
     ~/.local/share/kxmlgui5/okular/part.rc:
         path: okular/part.rc
         if: "[[ -d ~/.local/share/kxmlgui5/okular/ ]]"
     ~/.local/share/kxmlgui5/okular/shell.rc:
         path: okular/shell.rc
         if: "[[ -d ~/.local/share/kxmlgui5/okular/ ]]"
+
     ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings:
         path: sublime/Preferences.sublime-settings
     ~/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap:
         path: sublime/Default (Linux).sublime-keymap
 
+    ~/.config/Code/User/settings.json:
+        path: vscode/settings.json
+    ~/.config/Code/User/keybindings.json:
+        path: vscode/keybindings.json
+    ~/.config/Code/User/snippets:
+        path: vscode/snippets
+    ~/.config/Code/User/locale.json:
+        path: vscode/locale.json
+
+    ~/.config/Code - Insiders/User/settings.json:
+        path: vscode/settings.json
+    ~/.config/Code - Insiders/User/keybindings.json:
+        path: vscode/keybindings.json
+    ~/.config/Code - Insiders/User/snippets:
+        path: vscode/snippets
+    ~/.config/Code - Insiders/User/locale.json:
+        path: vscode/locale.json
