@@ -6,3 +6,8 @@
     ~/.local/share/kxmlgui5/okular/shell.rc:
         path: okular/shell.rc
         if: "[[ -d ~/.local/share/kxmlgui5/okular/ ]]"
+    ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings:
+        path: sublime/Preferences.sublime-settings
+    ~/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap:
+        path: sublime/Default (Linux).sublime-keymap
+
