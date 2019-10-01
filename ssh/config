@@ -35,3 +35,6 @@ Host t38
   ForwardX11 yes
   ForwardX11Trusted yes  
 
+Host sashimi
+  HostName 195.201.24.217
+  User michi
