@@ -109,3 +109,8 @@ function go() {
         xdg-open "$file"
     done
 }
+
+# preserves color when piping jq into less
+function jql() {
+    jq "$@" -C | less -R
+}
