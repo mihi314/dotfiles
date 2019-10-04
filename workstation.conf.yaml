@@ -1,12 +1,15 @@
+- shell:
+    # okular creates this directory only after the settings have been changed for the first time
+    # create it by hand here, so that the linking does not fail
+    - mkdir -p ~/.local/share/kxmlgui5/okular
+
 - link:
     ~/.ssh/config: ssh/config
 
     ~/.local/share/kxmlgui5/okular/part.rc:
         path: okular/part.rc
-        if: "[[ -d ~/.local/share/kxmlgui5/okular/ ]]"
     ~/.local/share/kxmlgui5/okular/shell.rc:
         path: okular/shell.rc
-        if: "[[ -d ~/.local/share/kxmlgui5/okular/ ]]"
 
     ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings:
         path: sublime/Preferences.sublime-settings
