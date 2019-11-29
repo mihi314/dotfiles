@@ -76,6 +76,22 @@ fi
 # for colored output of 'tree'
 eval "$(dircolors)"
 
+# navigation
+autoload -U select-word-style
+export WORDCHARS="~%^&\$*(){}[]<>?.+;-_'\""
+select-word-style normal
+
+backward-shell() {zle backward-word}
+forward-shell() {zle forward-word}
+backward-kill-shell() {zle backward-kill-word}
+zle -N backward-shell
+zle -N forward-shell
+zle -N backward-kill-shell
+zstyle ':zle:*-shell' word-style shell
+
+bindkey '^[[1;3D' backward-shell  # alt+left
+bindkey '^[[1;3C' forward-shell  # alt+right
+bindkey '^F' backward-kill-shell
 bindkey '^U' backward-kill-line
 
 # https://github.com/junegunn/fzf

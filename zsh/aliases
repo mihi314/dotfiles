@@ -20,7 +20,7 @@ alias reload2='exec $SHELL -l'
 alias help='run-help'
 alias skype='apulse skypeforlinux'
 alias n='nvidia-smi'
-alias n.='go .'
+alias n.='xdg-open . > /dev/null 2>&1'
 alias pycharm='pycharm-professional'
 alias s=subl
 
@@ -114,3 +114,9 @@ function go() {
 function jql() {
     jq "$@" -C | less -R
 }
+
+function reset-permissions() {
+    find "$@" -type d -print0 | xargs -0 chmod 0775
+    find "$@" -type f -print0 | xargs -0 chmod 0664
+}
+
