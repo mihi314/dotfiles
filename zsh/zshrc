@@ -81,9 +81,9 @@ autoload -U select-word-style
 export WORDCHARS="~%^&\$*(){}[]<>?.+;-_'\""
 select-word-style normal
 
-backward-shell() {zle backward-word}
-forward-shell() {zle forward-word}
-backward-kill-shell() {zle backward-kill-word}
+backward-shell() { zle backward-word }
+forward-shell() { zle forward-word }
+backward-kill-shell() { zle backward-kill-word }
 zle -N backward-shell
 zle -N forward-shell
 zle -N backward-kill-shell
