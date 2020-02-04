@@ -11,5 +11,5 @@ fi
 
 echo $input_file "->" $output_file
 
-docker run -i --rm -v /home:/home -u $(id -u):$(id -g) -w $PWD osgeo/gdal:alpine-small-latest \
+docker run -i --init --rm -v /home:/home -u $(id -u):$(id -g) -w $PWD osgeo/gdal:alpine-small-latest \
     ogr2ogr -f GPKG "$output_file" "$input_file"
