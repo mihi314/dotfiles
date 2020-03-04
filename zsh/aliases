@@ -17,6 +17,7 @@ alias ll='ls -lh'
 alias la='ls -a'
 alias lla='ll -a'
 alias reload2='exec $SHELL -l'
+alias diff='diff --color=auto'
 
 alias help='run-help'
 alias skype='apulse skypeforlinux'
@@ -41,7 +42,7 @@ alias cod='export PYTHONNOUSERSITE=False; conda deactivate'
 
 # terraloupe
 # for the --init: https://github.com/moby/moby/issues/2838#issuecomment-394131408
-alias drun='docker run --gpus all --init --cap-add=SYS_PTRACE -ti --net=host --rm -v /home:/home -v /mnt:/mnt -v /tmp:/tmp -u $(id -u):$(id -g) -w $PWD -e CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt -e GS_ACCESS_KEY_ID -e GS_SECRET_ACCESS_KEY -e GDAL_DISABLE_READDIR_ON_OPEN=YES -e CPL_VSIL_CURL_ALLOWED_EXTENSIONS -e MAX_TMPFILE_SIZE=1000 -e PYTHONPATH $DOCKER_IMAGE'
+alias drun='docker run --gpus all --init --cap-add=SYS_PTRACE -ti --net=host --rm -v /home:/home -v /mnt:/mnt -v /tmp:/tmp -u $(id -u):$(id -g) -w $PWD -e HOME -e PYTHONNOUSERSITE=False -e PYTHONPATH -e CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt -e GS_ACCESS_KEY_ID -e GS_SECRET_ACCESS_KEY -e GDAL_DISABLE_READDIR_ON_OPEN=YES -e CPL_VSIL_CURL_ALLOWED_EXTENSIONS -e MAX_TMPFILE_SIZE=1000 $DOCKER_IMAGE'
 alias gdalinfo='gdalinfo --config GDAL_PAM_ENABLED NO' 
 alias qgis3='flatpak run org.qgis.qgis'
 alias tft='terra flow task'
