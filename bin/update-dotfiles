@@ -8,8 +8,8 @@ cd ~/dotfiles
 temp_file=$(mktemp)
 error_msg="Applying autostash resulted in conflicts"
 
-git pull --rebase --autostash 2>&1 | tee temp_file
+git pull --rebase --autostash 2>&1 | tee "$temp_file"
 
-if grep -q "$error_msg" temp_file; then
+if grep -q "$error_msg" "$temp_file"; then
     exit 1
 fi
