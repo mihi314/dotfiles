@@ -75,6 +75,7 @@ fi
 
 # for colored output of 'tree'
 eval "$(dircolors)"
+export LS_COLORS="$LS_COLORS:ow=34;100:"
 
 # navigation
 autoload -U select-word-style
