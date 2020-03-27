@@ -50,10 +50,11 @@ alias qgis3='flatpak run org.qgis.qgis'
 alias tft='terra flow task'
 alias tfw='terra flow workflow'
 
+alias cdf='commit-dotfiles'
 # update dotfiles
 function udf()
 {
-    (cd ~/dotfiles && git pull) &&
+    update-dotfiles &&
     install-dotfiles "$@" &&
     reload
 }

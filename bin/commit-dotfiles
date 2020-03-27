@@ -1,0 +1,14 @@
+#!/bin/bash
+set -Eeo pipefail
+
+cd ~/dotfiles
+git add -i
+
+# exit if there was nothing staged
+if git diff --cached --quiet; then
+    echo Aborting due to nothing being staged.
+    exit 1
+fi
+
+git commit
+git push
