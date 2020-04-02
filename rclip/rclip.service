@@ -1,0 +1,8 @@
+[Unit]
+Description=rclip daemon
+
+[Service]
+ExecStart=%h/dotfiles/bin/rclip-daemon
+
+[Install]
+WantedBy=default.target

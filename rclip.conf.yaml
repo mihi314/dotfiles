@@ -1,0 +1,7 @@
+- link:
+    ~/.config/systemd/user/rclip.service: rclip/rclip.service
+
+- shell:
+    - systemctl --user daemon-reload 
+    - systemctl --user enable rclip.service
+    - systemctl --user restart rclip.service

@@ -1,0 +1,17 @@
+#!/bin/bash
+set -Eeo pipefail
+
+# listens at the specified port and copies everything that arrives to the clipboard
+# based on: https://stackoverflow.com/a/46542771/5768147
+
+HOST=127.0.0.1
+PORT=3141
+
+# make sure we are not already listening at that port
+if netstat -tlpn 2>/dev/null | grep -q " $HOST:$PORT "; then
+    exit 1
+fi
+
+while true; do
+    nc -l "$HOST" "$PORT" | xclip -sel primary -f | xclip -sel clipboard # -f
+done

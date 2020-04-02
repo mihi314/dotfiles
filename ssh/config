@@ -1,4 +1,9 @@
-Host poolpi
+# part of rclip
+# only do the forwarding when it is an interactive ssh session
+Match exec "is-pid-interactive-ssh $PPID"
+  RemoteForward localhost:3141 localhost:3141
+
+Host poolpiw
   HostName 192.168.0.10
   User pi
 

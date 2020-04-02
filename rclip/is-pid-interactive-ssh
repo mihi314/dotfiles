@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# based on: https://unix.stackexchange.com/a/499562
+
+pid="$1"
+
+unset POSIXLY_CORRECT
+xargs -0 getopt -o 46AaCfGgKkMNnqsTtVvXxYyB:b:c:D:E:e:F:I:i:J:L:l:m:O:o:p:Q:R:S:W:w: -- </proc/$pid/cmdline | \
+    perl -pe 's|.*? -- ||' | { read -r c; eval a=($c); [ ${#a[@]} -le 2 ]; }
