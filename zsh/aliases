@@ -52,8 +52,7 @@ alias tfw='terra flow workflow'
 
 alias cdf='commit-dotfiles'
 # update dotfiles
-function udf()
-{
+function udf() {
     update-dotfiles &&
     install-dotfiles "$@" &&
     reload
@@ -64,8 +63,7 @@ function udf()
 function ff() { find . -iname '*'"$*"'*' ; }
 
 # Swap 2 filenames around, if they exist (from Uzi's bashrc).
-function swap()
-{ 
+function swap() {
     local TMPFILE=tmp.$$
 
     [ $# -ne 2 ] && echo "swap: 2 arguments needed" && return 1
@@ -78,8 +76,7 @@ function swap()
 }
 
 # Handy Extract Program
-function extract()
-{
+function extract() {
     if [ -f $1 ] ; then
         case $1 in
             *.tar.bz2)   tar xvjf $1     ;;
@@ -124,5 +121,9 @@ function jql() {
 function reset-permissions() {
     find "$@" -type d -print0 | xargs -0 chmod 0775
     find "$@" -type f -print0 | xargs -0 chmod 0664
+}
+
+function sm() {
+    xdg-open "https://shortmarks.com/s.php?q=$*"
 }
 

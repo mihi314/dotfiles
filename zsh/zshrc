@@ -46,7 +46,8 @@ plugins=(zsh-syntax-highlighting)
 # for bash completion script support
 autoload -U +X bashcompinit && bashcompinit
 
-export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:$PATH"
+#source /etc/environment
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
