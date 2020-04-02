@@ -3,6 +3,7 @@ Description=rclip daemon
 
 [Service]
 ExecStart=%h/dotfiles/bin/rclip-daemon
+NoNewPrivileges=true
 
 [Install]
 WantedBy=default.target
