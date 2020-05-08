@@ -35,5 +35,9 @@
 
 [core]
     autocrlf = input
-    excludesfile = ~/dotfiles/gitignore_global
+    excludesfile = ~/dotfiles/git/gitignore_global
 	editor = vim
+    hooksPath = ~/dotfiles/git/hooks
+
+[includeIf "gitdir:~/dev/"]
+    path = ~/dev/.gitconfig

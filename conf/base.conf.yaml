@@ -4,7 +4,7 @@
     ~/.zshrc: zsh/zshrc
     ~/.zshenv: zsh/zshenv
     ~/.bashrc: bash/bashrc
-    ~/.gitconfig: gitconfig
+    ~/.gitconfig: git/gitconfig
     ~/.vimrc: vim/vimrc
     ~/.vim: vim
     ~/.tmux.conf: tmux.conf
