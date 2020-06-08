@@ -41,6 +41,7 @@ alias sleep-on='sudo systemctl --runtime unmask sleep.target suspend.target hibe
 # for the PYTHONNOUSERSITE thing see https://github.com/conda/conda/issues/448 
 alias coa='export PYTHONNOUSERSITE=True; conda activate'
 alias cod='export PYTHONNOUSERSITE=False; conda deactivate'
+alias col='conda env list'
 
 # terraloupe
 # for the --init: https://github.com/moby/moby/issues/2838#issuecomment-394131408
