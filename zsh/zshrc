@@ -53,26 +53,12 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 source $HOME/dotfiles/zsh/aliases
 
-# in order to keep the current working directory when opening a new terminal tab in gnome
-if [[ -e /etc/profile.d/vte.sh ]]; then
-    source /etc/profile.d/vte.sh
-fi
-
 unsetopt beep
 
 # To prevent % after every command in conemu. see: http://superuser.com/questions/645599/why-is-a-percent-sign-appearing-before-each-prompt-on-zsh-in-windows
 #setopt PROMPT_CR
 #setopt PROMPT_SP
 export PROMPT_EOL_MARK=""
-
-# on archlinux
-if [[ -e /etc/profile.d/autojump.zsh ]]; then
-    source /etc/profile.d/autojump.zsh
-fi
-# on ubuntu
-if [[ -e /usr/share/autojump/autojump.zsh ]]; then
-    source /usr/share/autojump/autojump.zsh
-fi
 
 # for colored output of 'tree'
 eval "$(dircolors)"
@@ -101,21 +87,27 @@ bindkey '^U' backward-kill-line
 source ~/dotfiles/fzf/shell/completion.zsh
 source ~/dotfiles/fzf/shell/key-bindings.zsh
 
-# gsutil command completion
-if [[ -e /usr/share/google-cloud-sdk/completion.zsh.inc ]]; then
-    source /usr/share/google-cloud-sdk/completion.zsh.inc
-fi
+to_source=(
+    # in order to keep the current working directory when opening a new terminal tab in gnome
+    /etc/profile.d/vte.sh
+    # gsutil command completion
+    /usr/share/google-cloud-sdk/completion.zsh.inc
+    ~/miniconda3/etc/profile.d/conda.sh
+    /opt/miniconda3/etc/profile.d/conda.sh
+    ~/.config/broot/launcher/bash/br
+    # on ubuntu
+    /etc/profile.d/autojump.zsh
+    # on archlinux
+    /usr/share/autojump/autojump.zsh
+)
+for file in "${to_source[@]}"; do
+    if [[ -e "$file" ]]; then
+        source "$file"
+    fi
+done
 
 # snakemake command completion
 compdef _gnu_generic snakemake
-
-if [[ -e ~/miniconda3/etc/profile.d/conda.sh ]]; then
-    source ~/miniconda3/etc/profile.d/conda.sh
-fi
-
-if [[ -e ~/.config/broot/launcher/bash/br ]]; then
-    source ~/.config/broot/launcher/bash/br
-fi
 
 # aliases for quickly editing zshrc etc
 function reload() { source ~/.zshrc; source ~/.zshenv; }
