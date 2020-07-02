@@ -27,6 +27,7 @@ alias n='nvidia-smi'
 alias n.='xdg-open . > /dev/null 2>&1'
 alias pycharm='pycharm-professional'
 alias s=subl
+alias listening='sudo lsof -i -P -n | grep LISTEN'
 
 # archlinux
 alias python2-default='export path=(~/python2-bin $path)'
@@ -126,5 +127,17 @@ function reset-permissions() {
 
 function sm() {
     xdg-open "https://shortmarks.com/s.php?q=$*"
+}
+
+function auto-retry() {
+    let backoff=1
+    while true; do
+        "$@" && break
+
+        sleep $backoff
+        let backoff*=2
+        
+        echo "$@"
+    done
 }
 

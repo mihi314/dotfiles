@@ -1,20 +1,20 @@
 <!DOCTYPE kpartgui SYSTEM 'kpartgui.dtd'>
-<kpartgui name="okular_part" version="41">
+<kpartgui name="okular_part" version="43">
  <MenuBar>
   <Menu name="file">
    <text>&amp;File</text>
-   <Action group="file_open" name="get_new_stuff"/>
-   <Action group="file_open" name="import_ps"/>
-   <Action group="file_save" name="file_save"/>
-   <Action group="file_save" name="file_save_as"/>
-   <Action group="file_save" name="file_reload"/>
-   <Action group="file_print" name="file_print"/>
-   <Action group="file_print" name="file_print_preview"/>
-   <Action group="file_print" name="open_containing_folder"/>
-   <Action group="file_print" name="properties"/>
-   <Action group="file_print" name="embedded_files"/>
-   <Action group="file_print" name="file_export_as"/>
-   <Action group="file_print" name="file_share"/>
+   <Action name="get_new_stuff" group="file_open"/>
+   <Action name="import_ps" group="file_open"/>
+   <Action name="file_save" group="file_save"/>
+   <Action name="file_save_as" group="file_save"/>
+   <Action name="file_reload" group="file_save"/>
+   <Action name="file_print" group="file_print"/>
+   <Action name="file_print_preview" group="file_print"/>
+   <Action name="open_containing_folder" group="file_print"/>
+   <Action name="properties" group="file_print"/>
+   <Action name="embedded_files" group="file_print"/>
+   <Action name="file_export_as" group="file_print"/>
+   <Action name="file_share" group="file_print"/>
   </Menu>
   <Menu name="edit">
    <text>&amp;Edit</text>
@@ -41,7 +41,6 @@
    <Action name="view_fit_to_page"/>
    <Action name="view_auto_fit"/>
    <Separator/>
-   <Action name="view_continuous"/>
    <Action name="view_render_mode"/>
    <Separator/>
    <Menu name="view_orientation">
@@ -91,20 +90,21 @@
    <Action name="speak_document"/>
    <Action name="speak_current_page"/>
    <Action name="speak_stop_all"/>
+   <Action name="speak_pause_resume"/>
   </Menu>
   <Menu name="settings">
    <text>&amp;Settings</text>
-   <Action group="show_merge" name="show_leftpanel"/>
-   <Action group="show_merge" name="show_bottombar"/>
-   <Action group="configure_merge" name="options_configure_generators"/>
-   <Action group="configure_merge" name="options_configure"/>
+   <Action name="show_leftpanel" group="show_merge"/>
+   <Action name="show_bottombar" group="show_merge"/>
+   <Action name="options_configure_generators" group="configure_merge"/>
+   <Action name="options_configure" group="configure_merge"/>
   </Menu>
   <Menu name="help">
    <text>&amp;Help</text>
-   <Action group="about_merge" name="help_about_backend"/>
+   <Action name="help_about_backend" group="about_merge"/>
   </Menu>
  </MenuBar>
- <ToolBar noMerge="1" name="mainToolBar">
+ <ToolBar name="mainToolBar" noMerge="1">
   <Action name="page_number"/>
   <text translationDomain="okular">Main Toolbar</text>
   <Separator name="separator_0"/>
@@ -123,9 +123,9 @@
   <Action name="mouse_toggle_annotate"/>
  </ToolBar>
  <ActionProperties>
-  <Action shortcut="Alt+Shift+Left; Alt+Left" name="go_document_back"/>
-  <Action shortcut="Alt+Shift+Right; Alt+Right" name="go_document_forward"/>
-  <Action shortcut="" name="go_next"/>
-  <Action shortcut="" name="go_previous"/>
+  <Action name="go_document_back" shortcut="Alt+Shift+Left; Alt+Left"/>
+  <Action name="go_document_forward" shortcut="Alt+Shift+Right; Alt+Right"/>
+  <Action name="go_next" shortcut=""/>
+  <Action name="go_previous" shortcut=""/>
  </ActionProperties>
 </kpartgui>

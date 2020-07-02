@@ -92,6 +92,7 @@ to_source=(
     /etc/profile.d/vte.sh
     # gsutil command completion
     /usr/share/google-cloud-sdk/completion.zsh.inc
+    /usr/share/bash-completion/completions/task.bash
     ~/miniconda3/etc/profile.d/conda.sh
     /opt/miniconda3/etc/profile.d/conda.sh
     ~/.config/broot/launcher/bash/br

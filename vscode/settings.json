@@ -1,6 +1,7 @@
 {
     "C_Cpp.clang_format_fallbackStyle": "Google",
     "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4 }",
+    "editor.renderWhitespace": "boundary",
     "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
     "python.linting.enabled": false,
     "python.testing.pytestEnabled": true,
@@ -19,5 +20,6 @@
     "workbench.tree.renderIndentGuides": "always",
     "workbench.tree.indent": 18,
     "explorer.confirmDragAndDrop": false,
-    "rewrap.wrappingColumn": 120
+    "rewrap.wrappingColumn": 120,
+    "python.languageServer": "Microsoft"
 }
