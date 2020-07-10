@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Commiting as: $GIT_AUTHOR_NAME <$GIT_AUTHOR_EMAIL>"
+echo "Committing as: $GIT_AUTHOR_NAME <$GIT_AUTHOR_EMAIL>"
 
 if [[ ("`pwd`" == "$HOME/dev"*) && "$GIT_AUTHOR_EMAIL" == *gmail* ]]; then
     echo Error: Email not set correctly
