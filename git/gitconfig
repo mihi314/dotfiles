@@ -24,6 +24,9 @@
 
     # diff between staged changes and last commit
     dc = diff --cached
+    ds = diff --staged
+
+    d = diff
 
     # list branches in last-modified order
     # https://stackoverflow.com/a/23943986
