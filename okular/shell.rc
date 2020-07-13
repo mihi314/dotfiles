@@ -1,11 +1,11 @@
 <!DOCTYPE kpartgui SYSTEM 'kpartgui.dtd'>
-<kpartgui name="okular_shell" version="8">
+<kpartgui version="9" name="okular_shell">
  <MenuBar>
   <Menu name="file">
    <DefineGroup name="file_open" append="open_merge"/>
    <DefineGroup name="file_save" append="save_merge"/>
    <DefineGroup name="file_print" append="print_merge"/>
-   <Action name="undo-close-tab" group="file_open"/>
+   <Action name="undo-close-tab" append="open_merge"/>
   </Menu>
   <!--Menu name="view" >
    <Action name="fullscreen" />
