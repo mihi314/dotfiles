@@ -10,6 +10,7 @@
     f = fetch
     fm = pull
     fr = pull --rebase
+    ap = add -p
 
     # log
     # with graph
@@ -27,6 +28,7 @@
     ds = diff --staged
 
     d = diff
+    f = fuzzy
 
     # list branches in last-modified order
     # https://stackoverflow.com/a/23943986
