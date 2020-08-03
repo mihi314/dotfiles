@@ -2,7 +2,7 @@
     # okular creates this directory only after the settings have been changed for the first time
     # create it by hand here, so that the linking does not fail
     - mkdir -p ~/.local/share/kxmlgui5/okular
-    - mkdir -p /.var/app/org.kde.okular/data/kxmlgui5/okular
+    - mkdir -p ~/.var/app/org.kde.okular/data/kxmlgui5/okular
     
     # gnome terminal colors
     - dconf load /org/gnome/terminal/legacy/profiles:/ < gnome_terminal.dconf
