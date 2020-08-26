@@ -105,7 +105,7 @@ function maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 # Create a ZIP archive of a file or folder.
 function makezip() { zip -r "${1%%/}.zip" "$1" ; }
 
-function go() {
+function xo() {
     for file in "$@"; do
         # if we try to open a google storage url, open it in the browser
         if [[ $file = gs://* ]]; then
