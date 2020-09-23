@@ -3,7 +3,6 @@
     "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4 }",
     "editor.renderWhitespace": "boundary",
     "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-    "python.linting.enabled": false,
     "python.testing.pytestEnabled": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
@@ -13,7 +12,6 @@
     "update.mode": "manual",
     "window.openFilesInNewWindow": "off", // when opening from context menu or console
     "workbench.colorTheme": "Monokai",
-    "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.openPositioning": "first",
     "explorer.confirmDelete": false,
     "python.formatting.provider": "black",
@@ -21,5 +19,15 @@
     "workbench.tree.indent": 18,
     "explorer.confirmDragAndDrop": false,
     "rewrap.wrappingColumn": 120,
-    "python.languageServer": "Microsoft"
+    "python.languageServer": "Pylance",
+    "editor.minimap.enabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        // "--disable=all",
+        "--enable=W0611",
+        "--enable=W0614"
+    ],
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.selectionClipboard": false,
+    "diffEditor.ignoreTrimWhitespace": true // disable pasting on middle-click
 }
