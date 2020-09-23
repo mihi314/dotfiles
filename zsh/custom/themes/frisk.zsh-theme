@@ -7,7 +7,7 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="]%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}*%{$fg[blue]%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-ZSH_THEME_AWS_PREFIX="%{$fg[blue]%}[aws::"
+ZSH_THEME_AWS_PREFIX="%{$fg_bold[black]%}[aws::"
 ZSH_THEME_AWS_SUFFIX="]%{$reset_color%} "
 
 
