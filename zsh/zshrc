@@ -112,11 +112,9 @@ done
 # snakemake command completion
 compdef _gnu_generic snakemake
 
-[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh) && compdef k=kubectl
 [[ $commands[helm] ]] && source <(helm completion zsh)
 [[ $commands[eksctl] ]] && source <(eksctl completion zsh)
-
-compdef k=kubectl
 
 
 # aliases for quickly editing zshrc etc
