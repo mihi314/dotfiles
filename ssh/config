@@ -43,4 +43,4 @@ Host t38
 Host sashimi
   HostName 195.201.24.217
   User michi
-
+  ServerAliveInterval 60
