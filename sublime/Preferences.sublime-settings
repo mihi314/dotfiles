@@ -1,14 +1,14 @@
 {
-    "auto_complete_commit_on_tab": true,
-    "color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
-    "default_line_ending": "unix",
-    "drag_text": false,
-    "font_size": 15,
-    "ignored_packages":
-    [
-        "Vintage"
-    ],
-    "remember_full_screen": true,
-    "shift_tab_unindent": true,
-    "translate_tabs_to_spaces": true
+	"auto_complete_commit_on_tab": true,
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+	"default_line_ending": "unix",
+	"drag_text": false,
+	"font_size": 11,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"remember_full_screen": true,
+	"shift_tab_unindent": true,
+	"translate_tabs_to_spaces": true
 }
