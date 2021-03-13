@@ -29,5 +29,16 @@
     ],
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "editor.selectionClipboard": false,
-    "diffEditor.ignoreTrimWhitespace": true // disable pasting on middle-click
+    "diffEditor.ignoreTrimWhitespace": true,
+    "reflow.preferredLineLength": 120,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter-notebook",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // "editor.defaultFormatter": "svelte.svelte-vscode"
 }
