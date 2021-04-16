@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM 'kpartgui.dtd'>
-<kpartgui version="9" name="okular_shell">
+<kpartgui name="okular_shell" version="9">
  <MenuBar>
   <Menu name="file">
    <DefineGroup append="open_merge" name="file_open"/>
@@ -19,7 +19,7 @@
    <DefineGroup append="about_merge" name="about_merge"/>
   </Menu>
  </MenuBar>
- <ToolBar alreadyVisited="1" noMerge="1" name="mainToolBar">
+ <ToolBar noMerge="1" alreadyVisited="1" name="mainToolBar">
   <text translationDomain="okular">Main Toolbar</text>
   <!--Action name="file_open_recent" /-->
   <!--Action name="file_print" /-->
