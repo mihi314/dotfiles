@@ -41,3 +41,5 @@
         path: vscode/snippets
     ~/.config/Code - Insiders/User/locale.json:
         path: vscode/locale.json
+
+    ~/.config/vlc/vlcrc: vlcrc
