@@ -44,3 +44,8 @@ Host sashimi
   HostName 195.201.24.217
   User michi
   ServerAliveInterval 60
+
+Host sushi
+  HostName 94.130.227.62
+  User michi
+  ServerAliveInterval 60
