@@ -8,6 +8,8 @@ sftp-config.json
 .pytype/
 .pytest_cache/
 .ipynb_checkpoints/
+__pycache__
+.mutmut-cache
 
 
 # Compiled source #
