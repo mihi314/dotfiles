@@ -3,7 +3,6 @@
     "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4 }",
     "editor.renderWhitespace": "boundary",
     "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-    "python.testing.pytestEnabled": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "terminal.integrated.commandsToSkipShell": [],
@@ -14,13 +13,14 @@
     "workbench.colorTheme": "Monokai",
     "workbench.editor.openPositioning": "first",
     "explorer.confirmDelete": false,
-    "python.formatting.provider": "black",
     "workbench.tree.renderIndentGuides": "always",
     "workbench.tree.indent": 18,
     "explorer.confirmDragAndDrop": false,
     "rewrap.wrappingColumn": 120,
+    "python.formatting.provider": "black",
     "python.languageServer": "Pylance",
-    "editor.minimap.enabled": false,
+    "python.analysis.typeCheckingMode": "basic",
+    "editor.minimap.enabled": true,
     "python.linting.pylintEnabled": true,
     "python.linting.pylintArgs": [
         // "--disable=all",
@@ -29,7 +29,6 @@
     ],
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "editor.selectionClipboard": false,
-    "diffEditor.ignoreTrimWhitespace": true,
     "reflow.preferredLineLength": 120,
     "workbench.editorAssociations": [
         {
@@ -37,8 +36,9 @@
             "filenamePattern": "*.ipynb"
         }
     ],
-    // "editor.defaultFormatter": "svelte.svelte-vscode"
-    "diffEditor.ignoreTrimWhitespace": true,
+    "files.associations": {
+        "*.toml": "ini"
+    },
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -53,6 +53,5 @@
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "typescript.updateImportsOnFileMove.enabled": "always"
+    }
 }
