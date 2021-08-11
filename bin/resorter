@@ -19,21 +19,22 @@ if (!loaded) { write("warning: R library 'argparser' unavailable; attempting to 
 }
 p <- arg_parser("sort a list using comparative rankings under the Bradley-Terry statistical model; see https://www.gwern.net/Resorter", name="resorter")
 p <- add_argument(p, "--input", short="-i",
-                  "input file - a CSV file of items to sort: one per line, with up to two columns. (eg both 'Akira\\n' and 'Akira, 10\\n' are valid).", type="character")
+                  "input file: a CSV file of items to sort: one per line, with up to two columns. (eg both 'Akira\\n' and 'Akira, 10\\n' are valid).", type="character")
 p <- add_argument(p, "--output", "output file: a file to write the final results to. Default: printing to stdout.")
 p <- add_argument(p, "--verbose", "whether to print out intermediate statistics", flag=TRUE)
 p <- add_argument(p, "--queries", short="-n", default=NA,
-                  "Maximum number of questions to ask the user; defaults to N*log(N) comparisons. If already rated, O(n) is a good max, but the more items and more levels in the scale and more accuracy desired, the more comparisons are needed.")
+                  "Maximum number of questions to ask the user; defaults to N*log(N) comparisons. If already rated, 𝒪(n) is a good max, but the more items and more levels in the scale and more accuracy desired, the more comparisons are needed.")
 p <- add_argument(p, "--levels", short="-l", default=5, "The highest level; rated items will be discretized into 1-l levels, so l=5 means items are bucketed into 5 levels: [1,2,3,4,5], etc")
-p <- add_argument(p, "--quantiles", short="-q", "What fraction to allocate to each level; space-separated; overrides `--levels`. This allows making one level of ratings narrower (and more precise) than the others, at their expense; for example, one could make 3-star ratings rarer with quantiles like `--quantiles '0 0.25 0.8 1'`. Default: uniform distribution (1-5 ~> '0.0 0.2 0.4 0.6 0.8 1.0').")
-p <- add_argument(p, "--no-scale", short="-ns", flag=TRUE, "Do not discretize/bucket the final estimated latent ratings into 1-l levels/ratings; print out inferred latent scores.")
+p <- add_argument(p, "--quantiles", short="-q", "What fraction to allocate to each level; space-separated; overrides `--levels`. This allows making one level of ratings narrower (and more precise) than the others, at their expense; for example, one could make 3-star ratings rarer with quantiles like `--quantiles '0 0.25 0.8 1'`. Default: uniform distribution (1--5 → '0.0 0.2 0.4 0.6 0.8 1.0').")
+p <- add_argument(p, "--no-scale", flag=TRUE, "Do not discretize/bucket the final estimated latent ratings into 1-l levels/ratings; print out inferred latent scores.")
 p <- add_argument(p, "--progress", flag=TRUE, "Print out mean standard error of items")
 argv <- parse_args(p)
 
 # read in the data from either the specified file or stdin:
-if(!is.na(argv$input)) { ranking <- read.csv(file=argv$input, header=FALSE); } else { ranking <- read.csv(file=file('stdin'), header=FALSE); }
+if(!is.na(argv$input)) { ranking <- read.csv(file=argv$input, stringsAsFactors=TRUE, header=FALSE); } else {
+    ranking <- read.csv(file=file('stdin'), stringsAsFactors=TRUE, header=FALSE); }
 
-# turns out noisy sorting is fairly doable in O(n * log(n)), so do that plus 1 to round up:
+# turns out noisy sorting is fairly doable in 𝒪(n * log(n)), so do that plus 1 to round up:
 if (is.na(argv$queries)) { n <- nrow(ranking)
                            argv$queries <- round(n * log(n) + 1) }
 
@@ -42,7 +43,7 @@ if(ncol(ranking)==1) { ranking$Rating <- 1; }
 colnames(ranking) <- c("Media", "Rating")
 # A set of ratings like 'foo,1\nbar,2' is not comparisons, though. We *could* throw out everything except the 'Media' column
 # but we would like to accelerate the interactive querying process by exploiting the valuable data the user has given us.
-# So we 'seed' the comparison dataset based on input data: higher rating means +1, lower means -1, same rating == tie (0.5 to both)
+# So we 'seed' the comparison dataset based on input data: higher rating means +1, lower means −1, same rating == tie (0.5 to both)
 comparisons <- NULL
 for (i in 1:(nrow(ranking)-1)) {
  rating1 <- ranking[i,]$Rating
@@ -132,8 +133,10 @@ rownames(ranking2) <- NULL
 
 if(!(argv$`no_scale`)) {
 
-    # if the user specified a bunch of buckets using `--quantiles`, parse it and use it, otherwise, take `--levels` and make a uniform distribution
-    quantiles <- if (!is.na(argv$quantiles)) { (sapply(strsplit(argv$quantiles, " "), as.numeric))[,1]; } else { seq(0, 1, length.out=(argv$levels+1)); }
+    # if the user specified a bunch of buckets using `--quantiles`, parse it and use it,
+    # otherwise, take `--levels` and make a uniform distribution
+    quantiles <- if (!is.na(argv$quantiles)) { (sapply(strsplit(argv$quantiles, " "), as.numeric))[,1]; } else {
+      seq(0, 1, length.out=(argv$levels+1)); }
     ranking2$Quantile <- with(ranking2, cut(ability,
                                     breaks=quantile(ability, probs=quantiles),
                                     labels=1:(length(quantiles)-1),
@@ -142,7 +145,8 @@ if(!(argv$`no_scale`)) {
     if (!is.na(argv$output)) { write.csv(df, file=argv$output, row.names=FALSE) } else { print(df); }
 } else { # return just the latent continuous scores:
          df <- data.frame(Media=rownames(coefficients), Estimate=coefficients[,1]);
-         if (!is.na(argv$output)) { write.csv(df[order(df$Estimate, decreasing=TRUE),], file=argv$output, row.names=FALSE); } else { print(finalReport); }
+         if (!is.na(argv$output)) { write.csv(df[order(df$Estimate, decreasing=TRUE),], file=argv$output, row.names=FALSE); } else {
+             print(finalReport); }
        }
 
 cat("\nResorting complete")
