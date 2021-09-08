@@ -49,3 +49,7 @@ Host sushi
   HostName 94.130.227.62
   User michi
   ServerAliveInterval 60
+
+Host aur.archlinux.org
+  IdentityFile ~/.ssh/aur
+  User aur
