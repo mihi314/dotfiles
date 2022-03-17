@@ -47,7 +47,7 @@ SHOW_AWS_PROMPT=false
 # for bash completion script support
 autoload -U +X bashcompinit && bashcompinit
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:$PATH"
+export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin"
 #source /etc/environment
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -101,6 +101,7 @@ to_source=(
     /etc/profile.d/autojump.zsh
     # on archlinux
     /usr/share/autojump/autojump.zsh
+    /usr/share/nvm/init-nvm.sh
 )
 for file in "${to_source[@]}"; do
     if [[ -e "$file" ]]; then
