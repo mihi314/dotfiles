@@ -30,12 +30,9 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "editor.selectionClipboard": false,
     "reflow.preferredLineLength": 120,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter-notebook",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     "files.associations": {
         "*.toml": "ini"
     },

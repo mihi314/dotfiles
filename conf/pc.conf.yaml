@@ -42,4 +42,13 @@
     ~/.config/Code - Insiders/User/locale.json:
         path: vscode/locale.json
 
+    ~/.config/Code - OSS/User/settings.json:
+        path: vscode/settings.json
+    ~/.config/Code - OSS/User/keybindings.json:
+        path: vscode/keybindings.json
+    ~/.config/Code - OSS/User/snippets:
+        path: vscode/snippets
+    ~/.config/Code - OSS/User/locale.json:
+        path: vscode/locale.json
+
     ~/.config/vlc/vlcrc: vlcrc
