@@ -116,18 +116,13 @@ compdef _gnu_generic snakemake
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh) && compdef k=kubectl
 [[ $commands[helm] ]] && source <(helm completion zsh)
 [[ $commands[eksctl] ]] && source <(eksctl completion zsh)
+[[ $commands[pyenv] ]] && source <(pyenv init -) && export PATH="$HOME/.pyenv/shims:$PATH"
 
 # python typer-cli completion
 _typer_completion() {
   eval $(env _TYPER_COMPLETE_ARGS="${words[1,$CURRENT]}" _TYPER_COMPLETE=complete_zsh typer)
 }
 compdef _typer_completion typer
-
-# pyenv
-if command -v pyenv > /dev/null; then
-    export PATH="$HOME/.pyenv/shims:$PATH"
-    eval "$(pyenv init -)"
-fi
 
 # aliases for quickly editing zshrc etc
 function reload() { source ~/.zshrc; source ~/.zshenv; }
