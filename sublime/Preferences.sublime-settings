@@ -10,5 +10,6 @@
 	],
 	"remember_full_screen": true,
 	"shift_tab_unindent": true,
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+	"update_check": false,
 }

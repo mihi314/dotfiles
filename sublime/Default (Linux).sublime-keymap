@@ -6,6 +6,7 @@
     { "keys": ["ctrl+f1"], "command": "toggle_bookmark" },
     { "keys": ["ctrl+shift+f1"], "command": "clear_bookmarks" },
     { "keys": ["alt+f1"], "command": "select_all_bookmarks" },
+    { "keys": ["ctrl+["], "command": "toggle_full_screen" },
     { "keys": ["alt+left"], "command": "jump_back" },
     { "keys": ["alt+right"], "command": "jump_forward" }
 ]

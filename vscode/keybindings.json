@@ -46,4 +46,8 @@
         "key": "ctrl+alt+k",
         "command": "workbench.action.keepEditor"
     },
+    {
+        "key": "f6",
+        "command": "cSpell.toggleEnableForGlobal"
+    },
 ]
