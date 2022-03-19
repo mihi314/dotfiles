@@ -19,7 +19,7 @@ alias lla='ll -a'
 alias reload2='exec $SHELL -l'
 alias diff='diff --color=auto'
 alias help='run-help'
-alias rc='rclip -m'
+alias rc='rclip'
 alias rca='rclip -a'
 
 alias skype='apulse skypeforlinux'

@@ -1,3 +1,6 @@
+- shell:
+    - mkdir -p ~/.config/systemd/user
+
 - link:
     ~/.config/systemd/user/rclip.service: rclip/rclip.service
 
