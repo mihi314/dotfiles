@@ -123,6 +123,12 @@ _typer_completion() {
 }
 compdef _typer_completion typer
 
+# pyenv
+if command -v pyenv > /dev/null; then
+    export PATH="$HOME/.pyenv/shims:$PATH"
+    eval "$(pyenv init -)"
+fi
+
 # aliases for quickly editing zshrc etc
 function reload() { source ~/.zshrc; source ~/.zshenv; }
 alias ec='$EDITOR ~/dotfiles/zsh/zshrc && reload'
