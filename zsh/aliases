@@ -49,8 +49,6 @@ alias col='conda env list'
 alias drun='docker run --init --cap-add=SYS_PTRACE -ti --net=host --rm -v /home:/home -v /mnt:/mnt -v /tmp:/tmp -u $(id -u):$(id -g) -w $PWD -e HOME -e PYTHONNOUSERSITE=False -e PYTHONPATH -e CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt -e GS_ACCESS_KEY_ID -e GS_SECRET_ACCESS_KEY -e GDAL_DISABLE_READDIR_ON_OPEN=YES -e CPL_VSIL_CURL_ALLOWED_EXTENSIONS -e MAX_TMPFILE_SIZE=1000 $DOCKER_IMAGE'
 alias gdalinfo='gdalinfo --config GDAL_PAM_ENABLED NO' 
 alias qgis3='flatpak run org.qgis.qgis'
-alias tft='terra flow task'
-alias tfw='terra flow workflow'
 
 alias cdf='commit-dotfiles'
 # update dotfiles

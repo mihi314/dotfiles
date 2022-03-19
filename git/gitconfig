@@ -4,13 +4,13 @@
 
 [alias]
     c = commit -v
-    s = status -sb
+    s = status --short --branch
     co = checkout
     p = push
     f = fetch
     fm = pull
     fr = pull --rebase
-    ap = add -p
+    ap = add --patch
 
     # log
     # with graph

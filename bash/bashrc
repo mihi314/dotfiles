@@ -60,4 +60,3 @@ alias ec='$EDITOR ~/dotfiles/bash/bashrc && reload'
 alias ea='$EDITOR ~/dotfiles/zsh/aliases && reload'
 alias ee='$EDITOR ~/dotfiles/zsh/zshenv && reload'
 alias eel='$EDITOR ~/.zshenv-local && reload'
-

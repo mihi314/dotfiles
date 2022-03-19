@@ -40,7 +40,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws)
+plugins=(aws poetry)
 SHOW_AWS_PROMPT=false
 
 # User configuration
@@ -117,6 +117,11 @@ compdef _gnu_generic snakemake
 [[ $commands[helm] ]] && source <(helm completion zsh)
 [[ $commands[eksctl] ]] && source <(eksctl completion zsh)
 
+# python typer-cli completion
+_typer_completion() {
+  eval $(env _TYPER_COMPLETE_ARGS="${words[1,$CURRENT]}" _TYPER_COMPLETE=complete_zsh typer)
+}
+compdef _typer_completion typer
 
 # aliases for quickly editing zshrc etc
 function reload() { source ~/.zshrc; source ~/.zshenv; }
@@ -124,5 +129,3 @@ alias ec='$EDITOR ~/dotfiles/zsh/zshrc && reload'
 alias ea='$EDITOR ~/dotfiles/zsh/aliases && reload'
 alias ee='$EDITOR ~/dotfiles/zsh/zshenv && reload'
 alias eel='$EDITOR ~/.zshenv-local && reload'
-
-
