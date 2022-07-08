@@ -3,10 +3,10 @@ set -Eeo pipefail
 
 cd ~/dotfiles
 
-echo -e 
+git status --short --branch
+
 echo -e '\033[0;35mStage changes, then exit shell to commit.\033[0;m'
 $SHELL -i
-# git add -i
 
 # exit if there was nothing staged
 if git diff --cached --quiet; then
