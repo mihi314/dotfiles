@@ -41,8 +41,14 @@
 [core]
     autocrlf = input
     excludesfile = ~/dotfiles/git/gitignore_global
-	editor = vim
+    editor = vim
     hooksPath = ~/dotfiles/git/hooks
 
 [includeIf "gitdir:~/dev/"]
     path = ~/dev/.gitconfig
+
+[diff]
+    algorithm = histogram
+    colorMoved = dimmed-zebra
+    # together with dimmed-zebra, makes indentation-only changes be marked as uninteresting
+    colorMovedWS = ignore-space-change
