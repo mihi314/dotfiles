@@ -50,7 +50,7 @@
 
 [diff]
     algorithm = histogram
-    colorMoved = dimmed-zebra
+    colorMoved = dimmed_zebra
     # together with dimmed-zebra, makes indentation-only changes be marked as uninteresting
     colorMovedWS = allow-indentation-change
 
