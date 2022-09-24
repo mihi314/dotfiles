@@ -1,3 +1,6 @@
+# For startup profiling. Uncomment and then run "time zsh -i -c zprof"
+# zmodload zsh/zprof
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/dotfiles/oh-my-zsh
 export ZSH_CUSTOM=$HOME/dotfiles/zsh/custom
@@ -29,7 +32,7 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -40,8 +43,14 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws)
+plugins=(aws nvm)
+
 SHOW_AWS_PROMPT=false
+
+# Speeds up shell startup a lot
+# https://lakur.tech/2021/12/10/fix-slow-zsh-startup-nvm/
+# Some caveats: https://github.com/nvm-sh/nvm/issues/782#issuecomment-246207492
+export NVM_LAZY=1
 
 # User configuration
 # for bash completion script support
@@ -101,7 +110,6 @@ to_source=(
     /etc/profile.d/autojump.zsh
     # on archlinux
     /usr/share/autojump/autojump.zsh
-    /usr/share/nvm/init-nvm.sh
 )
 for file in "${to_source[@]}"; do
     if [[ -e "$file" ]]; then
