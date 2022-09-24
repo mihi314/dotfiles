@@ -1,0 +1,38 @@
+#!/bin/zsh
+setopt localoptions noglobsubst noposixbuiltins pipefail no_aliases 2> /dev/null
+
+# Initially had an awk script instead of zsh-history-utils + jq here, but the
+# zsh history file has a very weird encoding of non-ascii characters, making
+# that very annoying.
+# https://zsh-workers.zsh.narkive.com/ircgS8Q2/zsh-generates-invalid-utf-8-encoding-in-the-history
+# https://watiko.net/2021/12/21/zsh-history-utils/
+
+HISTFILE=~/.zsh_history
+
+# The line selected in fzf
+export selected="$1"
+
+# Remove the line number in the beginning
+export cmd_to_remove="$(awk '{ cmd=$0; sub(/^[ \t]*[0-9]+\**[ \t]+/, "", cmd); print cmd }' <<< "$selected")"
+
+jq_script='
+    # In the selected line we get from fzf, all newlines have been replaced with r"\n", so we do that with the 
+    # history entries as well. (Cannot do it the other way round, as the mapping is not one-to-one)
+    select(.command | gsub("\n"; "\\n") != $cmd_to_remove)
+'
+
+# Keeping original to have a backup in case something here is broken
+cp "${HISTFILE}" "${HISTFILE}_bak"
+
+zsh-history-utils decode "${HISTFILE}" \
+    | jq --compact-output --arg cmd_to_remove "$cmd_to_remove" "$jq_script" \
+    | zsh-history-utils encode - > "${HISTFILE}_tmp"
+mv "${HISTFILE}_tmp" "${HISTFILE}"
+
+# Tell the fzf-history-widget function to reload the now modified history after exiting
+touch "${HISTFILE}_do_reload"
+
+# Give fzf the modified history on stdout
+HISTSIZE=999999999 
+fc -R "${HISTFILE}"
+fc -rl 1 | awk '{ cmd=$0; sub(/^[ \t]*[0-9]+\**[ \t]+/, "", cmd); if (!seen[cmd]++) print $0 }'

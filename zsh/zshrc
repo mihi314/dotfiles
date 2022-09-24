@@ -83,10 +83,10 @@ bindkey '^[[1;3C' forward-shell  # alt+right
 bindkey '^F' backward-kill-shell
 bindkey '^U' backward-kill-line
 
-# https://github.com/junegunn/fzf
 # command-line fuzzy finder
 source ~/dotfiles/fzf/shell/completion.zsh
 source ~/dotfiles/fzf/shell/key-bindings.zsh
+source ~/dotfiles/zsh/fzf-remove-history-entry/fzf-remove-history-entry.plugin.zsh
 
 to_source=(
     # in order to keep the current working directory when opening a new terminal tab in gnome
