@@ -20,7 +20,7 @@
     "python.formatting.provider": "black",
     "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "basic",
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     "python.linting.pylintEnabled": true,
     "python.linting.pylintArgs": [
         // "--disable=all",
@@ -54,5 +54,27 @@
     "svelte.enable-ts-plugin": true,
     "security.workspace.trust.untrustedFiles": "open",
     "jupyter.askForKernelRestart": false,
-    "cSpell.enabled": false
+    "prettier.printWidth": 120,
+    "svelte.plugin.svelte.format.config.printWidth": 120,
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "120"
+    ],
+    "python.linting.enabled": false,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "gitlens.advanced.fileHistoryFollowsRenames": true,
+    "gitlens.currentLine.format": "${agoOrDate}${' via 'pullRequest}${ • message|50?}",
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+    "markdown.preview.scrollPreviewWithEditor": false,
+    "markdown.preview.scrollEditorWithPreview": false,
+    "window.titleBarStyle": "custom",
+    "editor.guides.bracketPairs": "active",
+    "cSpell.enableFiletypes": [
+        "sql"
+    ],
+    "svelte.plugin.svelte.note-new-transformation": false
 }

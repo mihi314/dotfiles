@@ -1,4 +1,3 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
     {
         "key": "ctrl+q",
@@ -48,6 +47,20 @@
     },
     {
         "key": "f6",
-        "command": "cSpell.toggleEnableForGlobal"
+        "command": "cSpell.toggleEnableForWorkspace"
     },
+    {
+        "key": "alt+d",
+        "command": "editor.action.duplicateSelection"
+    },
+    {
+        "key": "f5",
+        "command": "workbench.action.debug.continue",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.continue",
+        "when": "debugState == 'stopped'"
+    }
 ]
