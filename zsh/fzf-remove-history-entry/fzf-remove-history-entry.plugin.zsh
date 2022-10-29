@@ -20,9 +20,9 @@ fzf-history-widget() {
 
   if [[ -f "${HISTFILE}_do_reload" ]]; then 
     # Reload (by pushing onto stack and loading $HISTFILE again)
+    # (Doing this only when really needed, in order to not mess up the arrow-up history on each invocation)
     # https://zsh.sourceforge.io/Doc/Release/Shell-Builtin-Commands.html
     # https://www.zsh.org/mla/workers/2020/msg00687.html
-    # (Doing this only when really needed, in order to not mess up the arrow-up history on each invocation)
     fc -P
     fc -p "$HISTFILE"
     

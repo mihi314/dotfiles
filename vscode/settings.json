@@ -76,5 +76,6 @@
     "cSpell.enableFiletypes": [
         "sql"
     ],
-    "svelte.plugin.svelte.note-new-transformation": false
+    "svelte.plugin.svelte.note-new-transformation": false,
+    "workbench.editor.untitled.hint": "hidden"
 }
