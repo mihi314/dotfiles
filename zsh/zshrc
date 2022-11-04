@@ -125,6 +125,7 @@ compdef _gnu_generic snakemake
 [[ $commands[helm] ]] && source <(helm completion zsh)
 [[ $commands[eksctl] ]] && source <(eksctl completion zsh)
 [[ $commands[pyenv] ]] && source <(pyenv init -) && export PATH="$HOME/.pyenv/shims:$PATH"
+compdef fkill=kill
 
 # python typer-cli completion
 _typer_completion() {
