@@ -6,6 +6,7 @@
     c = commit -v
     s = status --short --branch
     co = checkout
+    com = checkout --merge
     p = push
     f = fetch
     fm = pull
@@ -53,6 +54,10 @@
     colorMoved = dimmed_zebra
     # together with dimmed-zebra, makes indentation-only changes be marked as uninteresting
     colorMovedWS = allow-indentation-change
+
+[blame]
+    # breaks delta parsing: https://github.com/dandavison/delta/issues/1171
+    # markIgnoredLines = true
 
 [interactive]
     diffFilter = "if command -v delta > /dev/null; then delta --color-only --diff-highlight; else cat; fi"
