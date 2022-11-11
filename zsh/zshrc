@@ -133,6 +133,11 @@ _typer_completion() {
 }
 compdef _typer_completion typer
 
+# git checkout-with-stash completion
+# https://stackoverflow.com/questions/38725102/how-to-add-custom-git-command-to-zsh-completion
+zstyle ':completion:*:*:git:*' user-commands checkout-with-stash:'stash push, checkout, stash pop'
+_git-checkout-with-stash() { _git-checkout; }
+
 # aliases for quickly editing zshrc etc
 function reload() { source ~/.zshrc; source ~/.zshenv; }
 alias ec='$EDITOR ~/dotfiles/zsh/zshrc && reload'
