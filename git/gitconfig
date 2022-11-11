@@ -6,7 +6,7 @@
     c = commit -v
     s = status --short --branch
     co = checkout
-    com = checkout --merge
+    cos = checkout-with-stash
     p = push
     f = fetch
     fm = pull

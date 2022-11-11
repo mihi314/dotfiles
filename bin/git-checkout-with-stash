@@ -1,0 +1,23 @@
+#!/bin/bash
+set -Eeo pipefail
+
+# Stashes the current working directory, checks out a branch and then pops the
+# stash again. This helps with resolving conflicts with uncommitted changes.
+
+# There is also `git checkout --merge` that does something similar. But when
+# there is a conflict, there is (as far as I can tell) no easy way to get
+# back to the original state.
+
+stash_created=$(git stash create)
+if [[ "$stash_created" ]]; then
+    # (Not using `git stash store` with the result of `git stash create`, as
+    # that does not reset the working tree)
+    git stash push -m"[checkout-with-stash] $(git rev-parse --short HEAD)"
+fi
+
+git checkout "$@"
+
+if [[ "$stash_created" ]]; then
+    git stash pop --quiet && echo "Dropped stash" || true
+    git status --short --branch
+fi
