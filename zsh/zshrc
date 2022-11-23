@@ -97,6 +97,12 @@ source ~/dotfiles/fzf/shell/completion.zsh
 source ~/dotfiles/fzf/shell/key-bindings.zsh
 source ~/dotfiles/zsh/fzf-remove-history-entry/fzf-remove-history-entry.plugin.zsh
 
+source ~/dotfiles/fzf-tab/fzf-tab.plugin.zsh
+zstyle ':fzf-tab:complete:*' fzf-bindings 'ctrl-space:toggle-out' # toggle + move to next
+zstyle ':fzf-tab:*' prefix ''
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*:git-checkout:*' sort false
+
 to_source=(
     # in order to keep the current working directory when opening a new terminal tab in gnome
     /etc/profile.d/vte.sh
