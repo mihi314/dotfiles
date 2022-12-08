@@ -103,6 +103,14 @@ zstyle ':fzf-tab:*' prefix ''
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*:git-checkout:*' sort false
 
+# dedicated key for the **<Tab> context-aware fuzzy completion of fzf
+fzf-triggered-completion() {
+    FZF_COMPLETION_TRIGGER="" fzf-completion
+}
+zle -N fzf-triggered-completion
+bindkey '^P' fzf-triggered-completion
+
+
 to_source=(
     # in order to keep the current working directory when opening a new terminal tab in gnome
     /etc/profile.d/vte.sh
