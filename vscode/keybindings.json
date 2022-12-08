@@ -30,7 +30,7 @@
     },
     {
         "key": "ctrl+shift+f1",
-        "command": "bookmarks.clear",
+        "command": "bookmarks.clearFromAllFiles",
         "when": "editorTextFocus"
     },
     {
