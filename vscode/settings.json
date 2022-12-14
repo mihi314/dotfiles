@@ -77,5 +77,6 @@
         "sql"
     ],
     "svelte.plugin.svelte.note-new-transformation": false,
-    "workbench.editor.untitled.hint": "hidden"
+    "workbench.editor.untitled.hint": "hidden",
+    "extensions.ignoreRecommendations": true
 }
