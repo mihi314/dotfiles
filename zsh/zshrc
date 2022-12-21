@@ -110,6 +110,11 @@ fzf-triggered-completion() {
 zle -N fzf-triggered-completion
 bindkey '^P' fzf-triggered-completion
 
+# modified from original
+_fzf_complete_kill() {
+    _fzf_complete --multi --tac --nth 1,11.. --preview 'echo {}' --preview-window down:3:wrap --header-lines 1 \
+        --bind 'ctrl-r:reload(ps aux)' --header "CTRL-R to reload, TAB for multi-select" -- "$@" < <(command ps aux)
+}
 
 to_source=(
     # in order to keep the current working directory when opening a new terminal tab in gnome
