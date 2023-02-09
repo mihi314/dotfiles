@@ -130,12 +130,12 @@ function sm() {
 }
 
 function auto-retry() {
-    let backoff=1
+    local backoff=1
     while true; do
         "$@" && break
 
         sleep $backoff
-        let backoff*=2
+        backoff=$((2 * $backoff))
         
         echo "$@"
     done
