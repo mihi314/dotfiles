@@ -53,3 +53,5 @@
         path: vscode/locale.json
 
     ~/.config/vlc/vlcrc: vlcrc
+
+    ~/.config/flameshot/flameshot.ini: flameshot.ini
