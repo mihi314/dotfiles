@@ -1,0 +1,27 @@
+[/]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']
+
+[custom-keybindings/custom0]
+binding='<Primary><Alt>t'
+command='gnome-terminal'
+name='gnome-terminal'
+
+[custom-keybindings/custom1]
+binding='<Super>s'
+command='flameshot gui'
+name='flameshot'
+
+[custom-keybindings/custom2]
+binding='<Super>f'
+command='fsearch'
+name='fsearch'
+
+[custom-keybindings/custom3]
+binding='<Super>t'
+command='gnome-terminal'
+name='gnome-terminal'
+
+[custom-keybindings/custom4]
+binding='<Super>r'
+command="bash -c '~/dotfiles/bin/flameshot-ocr'"
+name='flameshot ocr'

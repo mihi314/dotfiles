@@ -5,7 +5,8 @@
     - mkdir -p ~/.var/app/org.kde.okular/data/kxmlgui5/okular
     
     # gnome terminal colors
-    - dconf load /org/gnome/terminal/legacy/profiles:/ < gnome_terminal.dconf
+    - dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal.dconf
+    - dconf load /org/gnome/settings-daemon/plugins/media-keys/ < keyboard-shortcuts.dconf
 
 - link:
     ~/.ssh/config: ssh/config

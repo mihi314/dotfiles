@@ -1,0 +1,7 @@
+#!/bin/bash
+
+flameshot gui --raw \
+    | tesseract stdin stdout \
+    | sed --null-data -E 's/(^\s+)|(\s+$)//g' \
+    | tee /dev/tty \
+    | xclip -in -selection clipboard
