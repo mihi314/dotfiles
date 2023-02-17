@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd ~/dotfiles
+
+dconf dump /org/gnome/terminal/legacy/profiles:/ > gnome-terminal.dconf
+dconf dump /org/gnome/desktop/wm/keybindings/ > keybindings.dconf
+dconf dump /org/gnome/settings-daemon/plugins/media-keys/ > keybindings-custom.dconf
+
+git diff *.dconf
