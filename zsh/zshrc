@@ -56,6 +56,12 @@ export NVM_LAZY=1
 # for bash completion script support
 autoload -U +X bashcompinit && bashcompinit
 
+# When re-sourcing the zshrc (and zshenv) after an edit, the PATH grows ever longer and
+# removed entries don't actually get removed until starting a new shell. Setting (when
+# not set yet) and restoring the initial path here solves that.
+export INITIAL_PATH="${INITIAL_PATH:-$PATH}"
+export PATH="$INITIAL_PATH"
+
 export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin"
 #source /etc/environment
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -112,7 +118,7 @@ bindkey '^P' fzf-triggered-completion
 
 # modified from original
 _fzf_complete_kill() {
-    _fzf_complete --multi --tac --nth 1,11.. --preview 'echo {}' --preview-window down:3:wrap --header-lines 1 \
+    _fzf_complete --multi --tac --nth 1,11.. --min-height 20 --preview 'echo {}' --preview-window down:3:wrap --header-lines 1 \
         --bind 'ctrl-r:reload(ps aux)' --header "CTRL-R to reload, TAB for multi-select" -- "$@" < <(command ps aux)
 }
 
