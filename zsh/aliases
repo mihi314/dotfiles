@@ -36,10 +36,10 @@ alias python2-default='export path=(~/python2-bin $path)'
 alias system="sudo systemctl"
 alias journal="journalctl -e --boot"
 alias journaln="journal -u NetworkManager -f"
+alias sd='sudo systemctl start docker.service'
 # https://askubuntu.com/a/858621
 alias sleep-off='sudo systemctl --runtime mask sleep.target suspend.target hibernate.target hybrid-sleep.target'
 alias sleep-on='sudo systemctl --runtime unmask sleep.target suspend.target hibernate.target hybrid-sleep.target'
-
 
 # for the PYTHONNOUSERSITE thing see https://github.com/conda/conda/issues/448 
 alias coa='export PYTHONNOUSERSITE=True; conda activate'
@@ -113,6 +113,10 @@ function xo() {
         fi
         xdg-open "$file"
     done
+}
+
+function xoxo() {
+    nohup xdg-open "$@" > /dev/null 2>&1
 }
 
 # preserves color when piping jq into less
