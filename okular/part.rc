@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <!DOCTYPE gui SYSTEM 'kpartgui.dtd'>
-<gui version="51" name="okular_part">
+<gui name="okular_part" version="54">
  <MenuBar>
   <Menu name="file">
    <text>&amp;File</text>
@@ -35,8 +35,8 @@
    <text>&amp;View</text>
    <Action name="presentation"/>
    <Separator/>
-   <Action name="view_zoom_in"/>
    <Action name="view_zoom_out"/>
+   <Action name="view_zoom_in"/>
    <Action name="view_actual_size"/>
    <Action name="view_fit_to_width"/>
    <Action name="view_fit_to_page"/>
@@ -96,6 +96,7 @@
   </Menu>
   <Menu name="settings">
    <text>&amp;Settings</text>
+   <Action name="colorscheme_menu" group="show_merge"/>
    <Action name="show_leftpanel" group="show_merge"/>
    <Action name="show_bottombar" group="show_merge"/>
    <Action name="options_configure_generators" group="configure_merge"/>
@@ -106,7 +107,7 @@
    <Action name="help_about_backend" group="about_merge"/>
   </Menu>
  </MenuBar>
- <ToolBar hidden="true" iconText="icononly" newline="true" name="annotationToolBar">
+ <ToolBar name="annotationToolBar" hidden="true" newline="true" iconText="icononly">
   <text translationDomain="okular">Annotation Toolbar</text>
   <Action name="annotation_highlighter"/>
   <Action name="annotation_underline"/>
@@ -143,20 +144,20 @@
   <Spacer name="spacer_1"/>
   <Action name="annotation_favorites"/>
  </ToolBar>
+ <ToolBar name="quickAnnotationToolBar" position="right" hidden="true" newline="true" iconText="icononly" iconSize="32">
+  <text>Quick Annotation Toolbar</text>
+  <Action name="quick_annotation_action_bar"/>
+ </ToolBar>
  <ActionProperties scheme="Default">
   <Action name="annotation_bookmark" shortcut=""/>
-  <Action iconText="Quick A" name="annotation_favorites"/>
+  <Action name="annotation_favorites" iconText="Quick A"/>
   <Action name="go_document_back" shortcut="Alt+Left"/>
   <Action name="go_document_forward" shortcut="Alt+Right"/>
   <Action name="go_next" shortcut=""/>
   <Action name="go_previous" shortcut=""/>
   <Action name="rename_bookmark" shortcut="Ctrl+Shift+B"/>
-  <Action priority="0" name="show_leftpanel"/>
-  <Action iconText="+" name="view_zoom_in"/>
-  <Action iconText="+" name="view_zoom_out"/>
+  <Action name="show_leftpanel" priority="0"/>
+  <Action name="view_zoom_in" iconText="+"/>
+  <Action name="view_zoom_out" iconText="+"/>
  </ActionProperties>
- <ToolBar hidden="true" position="right" iconText="icononly" newline="true" name="quickAnnotationToolBar" iconSize="32">
-  <text>Quick Annotation Toolbar</text>
-  <Action name="quick_annotation_action_bar"/>
- </ToolBar>
 </gui>
