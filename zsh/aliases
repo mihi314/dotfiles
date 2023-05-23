@@ -5,6 +5,7 @@ alias doch='sudo !!'
 
 alias g=git
 alias gs='git s'
+alias gap='git ap'
 alias py='python'
 alias ipy='ipython'
 alias ipy2='ipython2'

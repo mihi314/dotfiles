@@ -45,6 +45,12 @@ Host sashimi
   User michi
   ServerAliveInterval 60
 
+Host repo-server
+  HostName 195.201.24.217
+  User arch-repo
+  IdentityFile ~/.ssh/github-actions
+  ServerAliveInterval 60
+
 Host sushi
   HostName 94.130.227.62
   User michi

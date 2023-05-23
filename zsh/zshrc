@@ -43,14 +43,16 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws nvm)
+plugins=(aws nvm npm)
 
 SHOW_AWS_PROMPT=false
 
 # Speeds up shell startup a lot
 # https://lakur.tech/2021/12/10/fix-slow-zsh-startup-nvm/
 # Some caveats: https://github.com/nvm-sh/nvm/issues/782#issuecomment-246207492
-export NVM_LAZY=1
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/nvm/README.md
+zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' autoload no
 
 # User configuration
 # for bash completion script support
@@ -63,7 +65,11 @@ export INITIAL_PATH="${INITIAL_PATH:-$PATH}"
 export PATH="$INITIAL_PATH"
 
 export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin"
-#source /etc/environment
+
+# Files in fpath are functions that will be autoloaded when first called
+# (E.g. a file ~/dotfiles/zsh/functions/foo will define a function called foo)
+fpath=(~/dotfiles/zsh/functions "${fpath[@]}")
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -142,7 +148,6 @@ for file in "${to_source[@]}"; do
     fi
 done
 
-
 # snakemake command completion
 compdef _gnu_generic snakemake
 
@@ -157,6 +162,9 @@ _typer_completion() {
   eval $(env _TYPER_COMPLETE_ARGS="${words[1,$CURRENT]}" _TYPER_COMPLETE=complete_zsh typer)
 }
 compdef _typer_completion typer
+
+# Can replace this with activate-global-python-argcomplete when python-argcomplete is updated to 3.0
+eval "$(register-python-argcomplete pipx)"
 
 # git checkout-with-stash completion
 # https://stackoverflow.com/questions/38725102/how-to-add-custom-git-command-to-zsh-completion

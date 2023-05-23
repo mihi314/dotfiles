@@ -62,9 +62,6 @@
 [interactive]
     diffFilter = "if command -v delta > /dev/null; then delta --color-only --diff-highlight; else cat; fi"
 
-[add.interactive]
-    useBuiltin = false # for git 2.37.0
-
 [delta]
     keep-plus-minus-markers = true
 
