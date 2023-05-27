@@ -1,2 +1,4 @@
 startup_message off
 defscrollback 100000
+hardstatus alwayslastline "%{b kw}%{r}%1`%{g} %l %{w}| %{-b kw}%u %-Lw%{= rW}%50> %n%f %t %{-}%+Lw%<"
+term screen-256color
