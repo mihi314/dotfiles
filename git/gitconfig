@@ -47,7 +47,9 @@
     pager = "if command -v delta > /dev/null; then delta --diff-highlight; else less; fi"
 
 [merge]
-    conflictstyle = zdiff3
+    # Deactivated by default because old git versions crash with this option, preventing updating my dotfiles using git
+    # conflictstyle = zdiff3
+    conflictstyle = diff3
 
 [diff]
     algorithm = histogram
