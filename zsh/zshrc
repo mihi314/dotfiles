@@ -164,7 +164,7 @@ _typer_completion() {
 compdef _typer_completion typer
 
 # Can replace this with activate-global-python-argcomplete when python-argcomplete is updated to 3.0
-eval "$(register-python-argcomplete pipx)"
+[[ $commands[register-python-argcomplete] ]] && eval "$(register-python-argcomplete pipx)"
 
 # git checkout-with-stash completion
 # https://stackoverflow.com/questions/38725102/how-to-add-custom-git-command-to-zsh-completion
