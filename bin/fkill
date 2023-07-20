@@ -4,6 +4,6 @@ set -Eeo pipefail
 # Send signals to processes selected using ps and fzf
 
 ps aux \
-    | fzf  --multi --tac --nth 1,11.. --header-lines 1 --bind 'ctrl-r:reload(ps aux)' --header "CTRL-R to reload, TAB for multi-select" \
+    | fzf --multi --tac --nth 1,2,11.. --header-lines 1 --bind 'ctrl-r:reload(ps aux)' --header "CTRL-R to reload, TAB for multi-select" \
     | awk '{ print $2 }' \
     | xargs --no-run-if-empty kill --verbose "$@"
