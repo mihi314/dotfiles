@@ -45,6 +45,8 @@
     editor = vim
     hooksPath = ~/dotfiles/git/hooks
     pager = "if command -v delta > /dev/null; then delta --diff-highlight; else less; fi"
+    # To properly display non-ascii characters
+    quotePath = false
 
 [merge]
     # Deactivated by default because old git versions crash with this option, preventing updating my dotfiles using git
