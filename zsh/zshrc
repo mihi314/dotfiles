@@ -124,7 +124,7 @@ bindkey '^P' fzf-triggered-completion
 
 # modified from original
 _fzf_complete_kill() {
-    _fzf_complete --multi --tac --nth 1,11.. --min-height 20 --preview 'echo {}' --preview-window down:3:wrap --header-lines 1 \
+    _fzf_complete --multi --tac --nth 1,2,11.. --min-height 20 --preview 'echo {}' --preview-window down:3:wrap --header-lines 1 \
         --bind 'ctrl-r:reload(ps aux)' --header "CTRL-R to reload, TAB for multi-select" -- "$@" < <(command ps aux)
 }
 
@@ -155,6 +155,7 @@ compdef _gnu_generic snakemake
 [[ $commands[helm] ]] && source <(helm completion zsh)
 [[ $commands[eksctl] ]] && source <(eksctl completion zsh)
 [[ $commands[pyenv] ]] && source <(pyenv init -) && export PATH="$HOME/.pyenv/shims:$PATH"
+[[ $commands[docker] ]] && (docker completion 2>&1 >/dev/null) && source <(docker completion zsh)
 compdef fkill=kill
 
 # python typer-cli completion

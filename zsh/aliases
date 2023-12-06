@@ -24,6 +24,7 @@ alias rc='rclip'
 alias rca='rclip -a'
 alias date-iso='date --iso-8601=date'
 alias bc='bc --mathlib'
+alias dmesg='dmesg --reltime'
 
 alias skype='apulse skypeforlinux'
 alias n='nvidia-smi'
@@ -31,6 +32,7 @@ alias n.='xdg-open . > /dev/null 2>&1'
 alias pycharm='pycharm-professional'
 alias s=subl
 alias listening='sudo lsof -i -P -n | grep LISTEN'
+alias dc="docker compose"
 
 # archlinux
 alias python2-default='export path=(~/python2-bin $path)'
@@ -46,6 +48,7 @@ alias sleep-on='sudo systemctl --runtime unmask sleep.target suspend.target hibe
 alias coa='export PYTHONNOUSERSITE=True; conda activate'
 alias cod='export PYTHONNOUSERSITE=False; conda deactivate'
 alias col='conda env list'
+alias dvc='SHELL=/bin/bash dvc'
 
 # terraloupe
 # for the --init: https://github.com/moby/moby/issues/2838#issuecomment-394131408

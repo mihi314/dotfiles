@@ -54,5 +54,5 @@
         path: vscode/locale.json
 
     ~/.config/vlc/vlcrc: vlcrc
-
     ~/.config/flameshot/flameshot.ini: flameshot.ini
+    ~/.Mathematica/Kernel/init.m: mathematica/init.m
