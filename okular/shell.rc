@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <!DOCTYPE gui SYSTEM 'kpartgui.dtd'>
-<gui name="okular_shell" version="10">
+<gui name="okular_shell" version="11">
  <MenuBar>
   <Menu name="file">
    <DefineGroup name="file_open" append="open_merge"/>
@@ -13,7 +13,6 @@
   </Menu-->
   <Menu name="settings">
    <DefineGroup name="show_merge" append="show_merge"/>
-   <Action name="okular_show_sidebar" append="show_merge"/>
    <DefineGroup name="configure_merge" append="configure_merge"/>
   </Menu>
   <Merge/>
@@ -21,7 +20,7 @@
    <DefineGroup name="about_merge" append="about_merge"/>
   </Menu>
  </MenuBar>
- <ToolBar name="mainToolBar" alreadyVisited="1" noMerge="1">
+ <ToolBar name="mainToolBar" noMerge="1" alreadyVisited="1">
   <text translationDomain="okular">Main Toolbar</text>
   <!--Action name="file_open_recent" /-->
   <!--Action name="file_print" /-->
