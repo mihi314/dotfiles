@@ -15,7 +15,21 @@ if [[ "$stash_created" ]]; then
     git stash push -m"[checkout-with-stash] $(git rev-parse --short HEAD)"
 fi
 
+if [[ "$1" = "--pull"  ]]; then
+    shift
+    do_pull=1
+fi
+
 git checkout "$@"
+
+if [[ "$do_pull" ]]; then
+    upstream="$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null || true)"
+    if [[ "$upstream" ]]; then
+        git pull
+    else
+        echo "No upstream for pulling configured"
+    fi
+fi
 
 if [[ "$stash_created" ]]; then
     git stash pop --quiet && echo "Dropped stash" || true
