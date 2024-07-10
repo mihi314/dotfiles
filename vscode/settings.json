@@ -96,5 +96,19 @@
     "python.linting.enabled": false,
     "python.analysis.autoImportCompletions": true,
     "python.analysis.typeCheckingMode": "basic",
-    "workbench.editor.empty.hint": "hidden"
+    "workbench.editor.empty.hint": "hidden",
+    "telemetry.telemetryLevel": "crash",
+    "diffEditor.experimental.showMoves": true,
+    "typescriptExplorer.typeTree.readonly.enable": true,
+    // "workbench.colorCustomizations": {
+    //     "editorError.foreground": "#f14a4ac2"
+    // }
+    "workbench.colorCustomizations": {
+        "editorError.foreground": "#ffffff00",
+        "editorError.background": "#e4070759"
+    },
+    "prisma.showPrismaDataPlatformNotification": false,
+    "xstate.viewColumn": "active",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoClosingBrackets": "never"
 }
