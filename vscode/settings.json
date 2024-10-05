@@ -110,5 +110,6 @@
     "prisma.showPrismaDataPlatformNotification": false,
     "xstate.viewColumn": "active",
     "editor.autoClosingQuotes": "never",
-    "editor.autoClosingBrackets": "never"
+    "editor.autoClosingBrackets": "never",
+    "hediet.vscode-drawio.resizeImages": null
 }

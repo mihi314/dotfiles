@@ -20,7 +20,7 @@
    <DefineGroup name="about_merge" append="about_merge"/>
   </Menu>
  </MenuBar>
- <ToolBar name="mainToolBar" noMerge="1" alreadyVisited="1">
+ <ToolBar noMerge="1" alreadyVisited="1" name="mainToolBar">
   <text translationDomain="okular">Main Toolbar</text>
   <!--Action name="file_open_recent" /-->
   <!--Action name="file_print" /-->

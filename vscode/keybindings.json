@@ -62,5 +62,15 @@
         "key": "f5",
         "command": "-workbench.action.debug.continue",
         "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "shift+alt+r",
+        "command": "references-view.findReferences",
+        "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "shift+alt+f12",
+        "command": "-references-view.findReferences",
+        "when": "editorHasReferenceProvider"
     }
 ]

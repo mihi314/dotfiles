@@ -15,9 +15,10 @@ Host tpi
   HostName 192.168.178.70
   User pi
 
-Host wpi
-  HostName 192.168.178.24
+Host mpi
+  HostName 192.168.178.12
   User pi
+  ServerAliveInterval 60
 
 Host m
   HostName mechascho.no-ip.org

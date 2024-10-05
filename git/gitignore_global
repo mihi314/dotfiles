@@ -73,3 +73,6 @@ local.properties
 
 # PDT-specific
 .buildpath
+
+# for vh dumps
+*.sql.gz
