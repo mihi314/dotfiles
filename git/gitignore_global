@@ -10,7 +10,8 @@ sftp-config.json
 .ipynb_checkpoints/
 __pycache__
 .mutmut-cache
-
+*.sublime-project
+*.sublime-workspace
 
 # Compiled source #
 ###################
