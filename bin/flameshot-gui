@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Needed for annoying gnome wayland reasons
+# https://flameshot.org/docs/guide/wayland-help/#gnome-shortcut-does-not-trigger-flameshot
+
+flameshot gui

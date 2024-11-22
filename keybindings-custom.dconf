@@ -8,7 +8,7 @@ name='gnome-terminal'
 
 [custom-keybindings/custom1]
 binding='<Super>s'
-command='flameshot gui'
+command="bash -c '~/dotfiles/bin/flameshot-gui'"
 name='flameshot'
 
 [custom-keybindings/custom2]
