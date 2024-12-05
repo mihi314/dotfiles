@@ -1,115 +1,114 @@
 {
-    "C_Cpp.clang_format_fallbackStyle": "Google",
-    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4 }",
-    "editor.renderWhitespace": "boundary",
-    "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "terminal.integrated.commandsToSkipShell": [],
-    "terminal.integrated.shell.windows": "C:\\nospace\\msys64\\usr\\bin\\zsh.exe",
-    "terminal.integrated.shellArgs.windows": [],
-    "update.mode": "manual",
-    "window.openFilesInNewWindow": "off", // when opening from context menu or console
-    "workbench.colorTheme": "Monokai",
-    "workbench.editor.openPositioning": "first",
-    "explorer.confirmDelete": false,
-    "workbench.tree.renderIndentGuides": "always",
-    "workbench.tree.indent": 18,
-    "explorer.confirmDragAndDrop": false,
-    "rewrap.wrappingColumn": 120,
-    "python.formatting.provider": "black",
-    "python.languageServer": "Pylance",
-    "editor.minimap.enabled": false,
-    "python.linting.pylintEnabled": true,
-    "python.linting.pylintArgs": [
-        // "--disable=all",
-        "--enable=W0611",
-        "--enable=W0614"
-    ],
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "editor.selectionClipboard": false,
-    "reflow.preferredLineLength": 120,
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
-    "files.associations": {
-        "*.toml": "ini"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "svelte.enable-ts-plugin": true,
-    "security.workspace.trust.untrustedFiles": "open",
-    "jupyter.askForKernelRestart": false,
-    "prettier.printWidth": 120,
-    "svelte.plugin.svelte.format.config.printWidth": 120,
-    "python.formatting.blackArgs": [
-        "--line-length",
-        "120"
-    ],
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "gitlens.advanced.fileHistoryFollowsRenames": true,
-    "gitlens.currentLine.format": "${agoOrDate}${' via 'pullRequest}${ • message|50?}",
-    "[java]": {
-        "editor.defaultFormatter": "redhat.java"
-    },
-    "markdown.preview.scrollPreviewWithEditor": false,
-    "markdown.preview.scrollEditorWithPreview": false,
-    "window.titleBarStyle": "custom",
-    "editor.guides.bracketPairs": "active",
-    "cSpell.enableFiletypes": [
-        "sql"
-    ],
-    "svelte.plugin.svelte.note-new-transformation": false,
-    "extensions.ignoreRecommendations": true,
-    "xstate.nestTypegenFiles": false,
-    "explorer.fileNesting.patterns": {
-        "*.ts": "${capture}.js",
-        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-        "*.jsx": "${capture}.js",
-        "*.tsx": "${capture}.ts",
-        "tsconfig.json": "tsconfig.*.json",
-        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml"
-    },
-    "workbench.startupEditor": "none",
-    "explorer.fileNesting.enabled": true,
-    "git.openRepositoryInParentFolders": "never",
-    "cSpell.enabled": false,
-    "dvc.doNotRecommendRedHatExtension": true,
-    "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "python.linting.enabled": false,
-    "python.analysis.autoImportCompletions": true,
-    "python.analysis.typeCheckingMode": "basic",
-    "workbench.editor.empty.hint": "hidden",
-    "telemetry.telemetryLevel": "crash",
-    "diffEditor.experimental.showMoves": true,
-    "typescriptExplorer.typeTree.readonly.enable": true,
-    // "workbench.colorCustomizations": {
-    //     "editorError.foreground": "#f14a4ac2"
-    // }
-    "workbench.colorCustomizations": {
-        "editorError.foreground": "#ffffff00",
-        "editorError.background": "#e4070759"
-    },
-    "prisma.showPrismaDataPlatformNotification": false,
-    "xstate.viewColumn": "active",
-    "editor.autoClosingQuotes": "never",
-    "editor.autoClosingBrackets": "never",
-    "hediet.vscode-drawio.resizeImages": null
+  "C_Cpp.clang_format_fallbackStyle": "Google",
+  "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4 }",
+  "editor.renderWhitespace": "boundary",
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "terminal.integrated.commandsToSkipShell": [],
+  "terminal.integrated.shell.windows": "C:\\nospace\\msys64\\usr\\bin\\zsh.exe",
+  "terminal.integrated.shellArgs.windows": [],
+  "update.mode": "manual",
+  "window.openFilesInNewWindow": "off", // when opening from context menu or console
+  "workbench.colorTheme": "Monokai",
+  "workbench.editor.openPositioning": "first",
+  "explorer.confirmDelete": false,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.indent": 18,
+  "explorer.confirmDragAndDrop": false,
+  "rewrap.wrappingColumn": 120,
+  "python.formatting.provider": "black",
+  "python.languageServer": "Pylance",
+  "editor.minimap.enabled": false,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": [
+    // "--disable=all",
+    "--enable=W0611",
+    "--enable=W0614"
+  ],
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "editor.selectionClipboard": false,
+  "reflow.preferredLineLength": 120,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "files.associations": {
+    "*.toml": "ini"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "svelte.enable-ts-plugin": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "jupyter.askForKernelRestart": false,
+  "prettier.printWidth": 120,
+  "svelte.plugin.svelte.format.config.printWidth": 120,
+  "python.formatting.blackArgs": ["--line-length", "120"],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "gitlens.advanced.fileHistoryFollowsRenames": true,
+  "gitlens.currentLine.format": "${agoOrDate}${' via 'pullRequest}${ • message|50?}",
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "markdown.preview.scrollPreviewWithEditor": false,
+  "markdown.preview.scrollEditorWithPreview": false,
+  "window.titleBarStyle": "custom",
+  "editor.guides.bracketPairs": "active",
+  "cSpell.enableFiletypes": ["sql"],
+  "svelte.plugin.svelte.note-new-transformation": false,
+  "extensions.ignoreRecommendations": true,
+  "xstate.nestTypegenFiles": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml"
+  },
+  "workbench.startupEditor": "none",
+  "explorer.fileNesting.enabled": true,
+  "git.openRepositoryInParentFolders": "never",
+  "cSpell.enabled": false,
+  "dvc.doNotRecommendRedHatExtension": true,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.linting.enabled": false,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "workbench.editor.empty.hint": "hidden",
+  "telemetry.telemetryLevel": "crash",
+  "diffEditor.experimental.showMoves": true,
+  "typescriptExplorer.typeTree.readonly.enable": true,
+  // "workbench.colorCustomizations": {
+  //     "editorError.foreground": "#f14a4ac2"
+  // }
+  "workbench.colorCustomizations": {
+    "editorError.foreground": "#ffffff00",
+    "editorError.background": "#e4070759"
+  },
+  "prisma.showPrismaDataPlatformNotification": false,
+  "xstate.viewColumn": "active",
+  "editor.autoClosingQuotes": "never",
+  "editor.autoClosingBrackets": "never",
+  "hediet.vscode-drawio.resizeImages": null,
+  "editor.dragAndDrop": false,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "security.promptForLocalFileProtocolHandling": false,
+  "editor.copyWithSyntaxHighlighting": false
 }
