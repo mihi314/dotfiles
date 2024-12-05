@@ -1,7 +1,22 @@
 #!/bin/bash
 
-flameshot gui --raw \
-    | tesseract stdin stdout \
-    | sed --null-data -E 's/(^\s+)|(\s+$)//g' \
-    | tee /dev/tty \
-    | xclip -in -selection clipboard
+flameshot gui --raw |
+    # For the --psm see: https://tesseract-ocr.github.io/tessdoc/ImproveQuality.html#page-segmentation-method
+    tesseract -l en+deu stdin stdout --psm 1 |
+    # Conditionally remove linebreaks within paragraphs. Using awk because sed does not support lookarounds
+    # (based on https://unix.stackexchange.com/a/6918/414808)
+    if [[ "$1" == "--remove-linebreaks" ]]; then
+        awk -v RS='' '
+            {                        # do this for every record (i.e. paragraph):
+                print ""             # print blank line before every record
+                gsub(" *\n *", " "); # replace newlines by spaces, compressing spaces
+                sub(" *$", "");      # remove spaces at the end of the paragraph
+                print
+            }'
+    else 
+        cat
+    fi |
+    # Removes any whitespace at the beginning or end
+    sed --null-data -E 's/(^\s+)|(\s+$)//g' |
+    tee /dev/tty |
+    xclip -in -selection clipboard
