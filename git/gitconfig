@@ -49,6 +49,9 @@
     # To properly display non-ascii characters
     quotePath = false
 
+[submodule]
+    recurse = true
+
 [merge]
     # Deactivated by default because old git versions crash with this option, preventing updating my dotfiles using git
     # conflictstyle = zdiff3
@@ -59,6 +62,10 @@
     colorMoved = dimmed_zebra
     # together with dimmed-zebra, makes indentation-only changes be marked as uninteresting
     colorMovedWS = allow-indentation-change
+    submodule = log
+
+[status]
+    submoduleSummary = true
 
 [blame]
     # breaks delta parsing: https://github.com/dandavison/delta/issues/1171
@@ -69,6 +76,9 @@
 
 [delta]
     keep-plus-minus-markers = true
+    hyperlinks = true
+    hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+    # hyperlinks-commit-link-format
 
 [includeIf "gitdir:~/dev/"]
     path = ~/dev/.gitconfig
