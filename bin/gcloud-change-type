@@ -1,0 +1,163 @@
+#!/usr/bin/python
+import json
+import subprocess
+import sys
+import time
+from typing import List, Tuple
+
+import click
+import google.auth
+import google.oauth2.credentials
+import googleapiclient
+import googleapiclient.discovery
+import googleapiclient.errors
+
+
+
+def run(command: List[str], capture_output=False, *args, **kwargs):
+    if capture_output:
+        kwargs["stdout"] = subprocess.PIPE
+        kwargs["stderr"] = subprocess.PIPE
+        kwargs["encoding"] = "utf-8"
+
+    try:
+        return subprocess.run(command, *args, **kwargs, check=True)
+    except subprocess.CalledProcessError as e:
+        print("Error while running", command)
+        print(e.stderr)
+        sys.exit(e.returncode)
+
+
+def stop_instance_if_running(instance, zone, status):
+    if "RUNNING" in status:
+        print("Instance {} needs to be stopped in order to change the machine type".format(instance))
+        choice = input("Continue (y/n)? ")
+        if choice in "yY":
+            command = ["gcloud", "compute", "instances", "stop", instance, "--zone", zone]
+            run(command)
+        else:
+            print("Aborting")
+            sys.exit(-1)
+
+
+def wait_for_operation(operation, api, project, zone):
+    while True:
+        result = api.zoneOperations().get(
+            project=project,
+            zone=zone,
+            operation=operation).execute()
+        if result["status"] == "DONE":
+            if "error" in result:
+                print(result["error"])
+                sys.exit(-1)
+            return result
+
+        time.sleep(1)
+
+
+def execute_api_request(request, api, project, zone):
+    try:
+        operation = request.execute()
+        return wait_for_operation(operation["name"], api, project, zone)
+    except googleapiclient.errors.HttpError as e:
+        print(e._get_reason() or e)
+        sys.exit(-1)
+
+
+def add_accelerators(accelerators: List[Tuple[str, int]], compute_api, project, instance, zone):
+    guest_accelerators = []
+    for type, count in accelerators:
+        if not type.startswith("http"):
+            type = ("https://www.googleapis.com/compute/v1/projects/{}/zones/{}/acceleratorTypes/{}"
+                    .format(project, zone, type))
+        guest_accelerators.append({"acceleratorType": type, "acceleratorCount": int(count)})
+
+    body = {"guestAccelerators": guest_accelerators}
+
+    request = compute_api.instances().setMachineResources(project=project, zone=zone, instance=instance, body=body)
+    execute_api_request(request, compute_api, project, zone)
+    print("Set accelerators to {}".format(accelerators))
+
+
+def set_migrate_on_host_maintenance(do_migrate, compute_api, project, instance, zone):
+    value = "MIGRATE" if do_migrate else "TERMINATE"
+    body = {
+        "onHostMaintenance": value,
+        "automaticRestart": True,
+        "preemptible": False
+    }
+    request = compute_api.instances().setScheduling(project=project, zone=zone, instance=instance, body=body)
+    execute_api_request(request, compute_api, project, zone)
+    print("Set onHostMaintenance to {}".format(value))
+
+
+@click.command()
+@click.argument("instance_name")
+@click.option("-t", "--machine-type",
+              help="Example: n1-standard-4. Possible values can be listed with 'gcloud compute machine-types list'.")
+@click.option("-c", "--custom-cpu", type=int,
+              help="Number of cpus. Can't be used together with --machine-type")
+@click.option("-m", "--custom-memory", type=str,
+              help="Amount of memory. Example: 10G. Can't be used together with --machine-type")
+@click.option("-g", "--gpus", type=click.Tuple([str, int]), multiple=True,
+              help="Type of gpu and count. Example: nvidia-tesla-p100 2")
+@click.option("-co", "--connect",
+              help="Expects a unix username. If specified, will directly connect to the instance as this user using "
+                   "the gcloud-connect-instance script")
+def main(instance_name, machine_type, custom_cpu, custom_memory, gpus, connect):
+    """Script for changing the machine type of an instance"""
+
+    # Could also be gotten from config files, which would be a bit faster..
+    # todo: can also get the access token needed below here (via gcloud config config-helper --force-auth-refresh "--format=value(credential.access_token)")
+    project = run(["gcloud", "config", "get-value", "project"], capture_output=True).stdout.rstrip("\n")
+
+    # get zone and status of the instance
+    command = ["gcloud", "compute", "instances", "list", "--format", "json", "--filter", "name=" + instance_name]
+    matching_instances = run(command, capture_output=True).stdout
+    matching_instances = json.loads(matching_instances)
+
+    if len(matching_instances) != 1:
+        print("Instance '{}' not found in project '{}'".format(instance_name, project))
+        sys.exit(-1)
+
+    zone = matching_instances[0]["zone"].split("/")[-1]
+
+
+    stop_instance_if_running(instance_name, zone, matching_instances[0]["status"])
+
+
+    # Change cpus/memory
+    if machine_type or custom_cpu or custom_memory:
+        command = ["gcloud", "compute", "instances", "set-machine-type", instance_name, "--zone", zone]
+
+        if machine_type:
+            command.extend(["--machine-type", machine_type])
+        if custom_cpu:
+            command.extend(["--custom-cpu", str(custom_cpu)])
+        if custom_memory:
+            command.extend(["--custom-memory", custom_memory])
+
+        run(command)
+
+    # get auth token of the user currently logged in with gcloud
+    command = ["gcloud", "auth", "print-access-token"]
+    access_token = run(command, capture_output=True).stdout.rstrip("\n")
+    credentials = google.oauth2.credentials.Credentials(access_token)
+    compute_api = googleapiclient.discovery.build("compute", "v1", credentials=credentials)
+
+    # todo: also need to change order of machine type setting and gpu adding/removing sometimes (depending on if it already got one)
+    # Change gpus/accelerators
+    # If we want to add gpus via the api, have to set the maintenance policy to TERMINATE first.
+    # If we remove gpus, can only set it to MIGRATE afterwards
+    if gpus:
+        set_migrate_on_host_maintenance(False, compute_api, project, instance_name, zone)
+        add_accelerators(gpus, compute_api, project, instance_name, zone)
+    else:
+        add_accelerators(gpus, compute_api, project, instance_name, zone)
+        set_migrate_on_host_maintenance(True, compute_api, project, instance_name, zone)
+
+    if connect:
+        run(["gcloud-connect-instance", instance_name, connect])
+
+if __name__ == "__main__":
+    main()

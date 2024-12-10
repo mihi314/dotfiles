@@ -1,0 +1,72 @@
+#!/bin/bash
+set -Eeo pipefail
+
+
+function auto-retry() {
+    let backoff=1
+    while true; do
+        "$@" && break
+
+        sleep $backoff
+        let backoff*=2
+
+        echo "$@"
+    done
+}
+
+
+function mount_sshfs() {
+    user=$1
+    ip=$2
+    local_dir=$3
+    remote_dir=$4
+
+    # if not mounted already, mount
+    if ! mountpoint -q "$local_dir" ; then
+        # try unmounting anyway (needed when the sshfs process was killed/died)
+        fusermount -qzu "$local_dir" || true
+
+        mkdir -p "$local_dir"
+
+        # the options from "gcloud compute ssh user@instance --dry-run"
+        # if some of them are not present, there might be mysterious timeout issues
+        #-o StrictHostKeyChecking=no
+        ssh_options="-i $HOME/.ssh/google_compute_engine -o CheckHostIP=no -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=$HOME/.ssh/google_compute_known_hosts"
+        # nonempty option because pycharm always leaves its .idea folders behind
+        auto-retry sshfs -o nonempty,ServerAliveInterval=15,ServerAliveCountMax=3,ConnectTimeout=10 \
+            -o ssh_command="ssh $ssh_options" "$user@$ip:$remote_dir" "$local_dir"
+    fi
+}
+
+
+if [[ ! $1 || ! $2 ]]; then
+    echo 'Missing instance (and username) e.g. "gcloud-connect-instance some-instance-name some-username"'
+    exit 1
+fi
+
+instance="$1"
+user="$2"
+zone=$(gcloud compute instances list --filter name="$instance" --format "value(zone)")
+
+# start instance if not running yet
+status=$(gcloud compute instances describe "$instance" --zone $zone | grep status)
+if [[ $status != "status: RUNNING" ]]; then
+    echo "Instance $instance not running, starting..."
+    gcloud compute instances start $instance --zone $zone
+fi
+
+# updates ~/.ssh/config
+# (not used in this script, but useful for e.g. sftp in pycharm)
+gcloud compute config-ssh
+
+# ssh into machine once, and immediately exit
+# makes sure the ssh keys etc are propagated before running sshfs
+auto-retry gcloud compute ssh "$user@$instance" --command=true --zone $zone
+
+# get instance ip
+ip=$(gcloud compute instances describe "$instance" --zone $zone | grep natIP | grep -oE "[0-9.]+")
+# mount some stuff
+mount_sshfs $user $ip "$HOME/mnt/$instance" "/home"
+mount_sshfs $user $ip "$HOME/mnt/${instance}-mnt" "/mnt"
+
+auto-retry gcloud compute ssh "$user@$instance" --zone $zone
