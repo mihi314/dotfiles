@@ -38,6 +38,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="yyyy-mm-dd"
+HISTSIZE=200000
+SAVEHIST=$HISTSIZE
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -156,6 +158,8 @@ compdef _gnu_generic snakemake
 [[ $commands[eksctl] ]] && source <(eksctl completion zsh)
 [[ $commands[pyenv] ]] && source <(pyenv init -) && export PATH="$HOME/.pyenv/shims:$PATH"
 [[ $commands[docker] ]] && (docker completion 2>&1 >/dev/null) && source <(docker completion zsh)
+[[ $commands[uv] ]] && source <(uv generate-shell-completion zsh)
+[[ $commands[uvx] ]] && source <(uvx --generate-shell-completion zsh)
 compdef fkill=kill
 
 # python typer-cli completion
