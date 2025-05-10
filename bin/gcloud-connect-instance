@@ -32,8 +32,7 @@ function mount_sshfs() {
         # if some of them are not present, there might be mysterious timeout issues
         #-o StrictHostKeyChecking=no
         ssh_options="-i $HOME/.ssh/google_compute_engine -o CheckHostIP=no -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o UserKnownHostsFile=$HOME/.ssh/google_compute_known_hosts"
-        # nonempty option because pycharm always leaves its .idea folders behind
-        auto-retry sshfs -o nonempty,ServerAliveInterval=15,ServerAliveCountMax=3,ConnectTimeout=10 \
+        auto-retry sshfs -o ServerAliveInterval=15,ServerAliveCountMax=3,ConnectTimeout=10 \
             -o ssh_command="ssh $ssh_options" "$user@$ip:$remote_dir" "$local_dir"
     fi
 }

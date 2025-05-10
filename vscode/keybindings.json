@@ -72,5 +72,23 @@
         "key": "shift+alt+f12",
         "command": "-references-view.findReferences",
         "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "ctrl+meta+i",
+        "command": "editor.action.inlineSuggest.trigger"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.files.action.focusOpenEditorsView",
+        "when": "workbench.explorer.openEditorsView.active"
+    },
+    {
+        "key": "ctrl+k e",
+        "command": "-workbench.files.action.focusOpenEditorsView",
+        "when": "workbench.explorer.openEditorsView.active"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "bookmarksExplorer.focus"
     }
 ]

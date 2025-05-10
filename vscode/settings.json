@@ -36,19 +36,29 @@
     "*.toml": "ini"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
   },
   "svelte.enable-ts-plugin": true,
   "security.workspace.trust.untrustedFiles": "open",
@@ -56,14 +66,10 @@
   "prettier.printWidth": 120,
   "svelte.plugin.svelte.format.config.printWidth": 120,
   "python.formatting.blackArgs": ["--line-length", "120"],
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+
   "gitlens.advanced.fileHistoryFollowsRenames": true,
   "gitlens.currentLine.format": "${agoOrDate}${' via 'pullRequest}${ • message|50?}",
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  },
+
   "markdown.preview.scrollPreviewWithEditor": false,
   "markdown.preview.scrollEditorWithPreview": false,
   "window.titleBarStyle": "custom",
@@ -110,5 +116,21 @@
   "editor.dragAndDrop": false,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "security.promptForLocalFileProtocolHandling": false,
-  "editor.copyWithSyntaxHighlighting": false
+  "editor.copyWithSyntaxHighlighting": false,
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.analysis.showOnlyDirectDependenciesInAutoImport": true,
+  "editor.linkedEditing": true,
+  "ruff.lineLength": 120,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "typescript.updateImportsOnPaste.enabled": false,
+  "javascript.updateImportsOnPaste.enabled": false
 }
