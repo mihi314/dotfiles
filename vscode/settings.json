@@ -132,5 +132,7 @@
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "github.copilot.editor.enableAutoCompletions": true,
   "typescript.updateImportsOnPaste.enabled": false,
-  "javascript.updateImportsOnPaste.enabled": false
+  "javascript.updateImportsOnPaste.enabled": false,
+  "editor.smartSelect.selectLeadingAndTrailingWhitespace": false,
+  "editor.smartSelect.selectSubwords": false
 }

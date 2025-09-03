@@ -90,5 +90,9 @@
     {
         "key": "ctrl+shift+b",
         "command": "bookmarksExplorer.focus"
+    },
+    {
+        "key": "ctrl+shift+space",
+        "command": "expand-selection-to-scope.expand"
     }
 ]

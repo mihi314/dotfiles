@@ -12,6 +12,7 @@ __pycache__
 .mutmut-cache
 *.sublime-project
 *.sublime-workspace
+log*.txt
 
 # Compiled source #
 ###################
