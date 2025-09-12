@@ -80,5 +80,5 @@
     hyperlinks-file-link-format = "vscode://file/{path}:{line}"
     # hyperlinks-commit-link-format
 
-[includeIf "gitdir:~/dev/"]
-    path = ~/dev/.gitconfig
+[includeIf "gitdir:~/vh/"]
+    path = ~/vh/git/gitconfig
