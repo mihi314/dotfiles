@@ -94,5 +94,10 @@
     {
         "key": "ctrl+shift+space",
         "command": "expand-selection-to-scope.expand"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
     }
 ]

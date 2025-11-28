@@ -30,7 +30,9 @@
   "editor.selectionClipboard": false,
   "reflow.preferredLineLength": 120,
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.ipynb": "jupyter-notebook",
+    "*.svg": "default"
   },
   "files.associations": {
     "*.toml": "ini"
@@ -134,5 +136,10 @@
   "typescript.updateImportsOnPaste.enabled": false,
   "javascript.updateImportsOnPaste.enabled": false,
   "editor.smartSelect.selectLeadingAndTrailingWhitespace": false,
-  "editor.smartSelect.selectSubwords": false
+  "editor.smartSelect.selectSubwords": false,
+  "bookmarks.keepBookmarksOnLineDelete": true,
+  "git.blame.editorDecoration.enabled": false,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "workbench.editor.revealIfOpen": true
 }

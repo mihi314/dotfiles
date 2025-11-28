@@ -1,5 +1,5 @@
 if [[ $SSH_CONNECTION ]]; then SSH="%{$fg[red]%}"; else SSH=""; fi
-if [[ $SHLVL -gt 1 ]]; then NESTING="%{$fg[magenta]%}[nested::$SHLVL]%{$reset_color%} "; else NESTING=""; fi
+if [[ $SHLVL -gt 1 ]]; then NESTING="%{$fg[magenta]%}[nested::$(($SHLVL-1))]%{$reset_color%} "; else NESTING=""; fi
 
 GIT_CB="git::"
 ZSH_THEME_SCM_PROMPT_PREFIX="%{$fg[blue]%}["
