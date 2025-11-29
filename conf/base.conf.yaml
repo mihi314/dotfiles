@@ -9,6 +9,7 @@
     ~/.vim: vim
     ~/.tmux.conf: tmux.conf
     ~/.screenrc: screenrc
+    ~/.config/htop/htoprc: htoprc
 
 - shell:
     - git submodule update --init --recursive
