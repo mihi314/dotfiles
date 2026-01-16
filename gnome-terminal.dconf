@@ -28,6 +28,7 @@ bold-is-bright=true
 default-size-columns=90
 default-size-rows=30
 foreground-color='rgb(246,245,238)'
+login-shell=false
 palette=['rgb(76,76,76)', 'rgb(239,41,41)', 'rgb(122,172,24)', 'rgb(216,207,103)', 'rgb(97,184,208)', 'rgb(105,90,187)', 'rgb(213,56,100)', 'rgb(254,255,254)', 'rgb(105,105,105)', 'rgb(239,41,41)', 'rgb(122,172,24)', 'rgb(216,207,103)', 'rgb(97,184,208)', 'rgb(105,90,187)', 'rgb(213,56,100)', 'rgb(254,255,254)']
 rewrap-on-resize=true
 scroll-on-keystroke=true

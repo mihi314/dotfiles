@@ -3,6 +3,7 @@
     # create it by hand here, so that the linking does not fail
     - mkdir -p ~/.local/share/kxmlgui5/okular
     - mkdir -p ~/.var/app/org.kde.okular/data/kxmlgui5/okular
+    - mkdir -p ~/.config/ghostty/themes
     
     # gnome terminal colors
     - dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal.dconf
@@ -60,3 +61,6 @@
     ~/.config/vlc/vlcrc: vlcrc
     ~/.config/flameshot/flameshot.ini: flameshot.ini
     ~/.Mathematica/Kernel/init.m: mathematica/init.m
+
+    ~/.config/ghostty/config: ghostty/config
+    ~/.config/ghostty/themes/Monokai Mine: ghostty/Monokai Mine

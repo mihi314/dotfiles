@@ -1,0 +1,32 @@
+# Based on the Monokai Classic theme
+# "black"
+palette = 0=#4C4C4C
+palette = 8=#6e7066
+# "red"
+palette = 1=#f92672
+palette = 9=#f92672
+# "green"
+palette = 2=#a6e22e
+palette = 10=#a6e22e
+# "yellow"
+palette = 3=#e6db74
+palette = 11=#e6db74
+# "blue"
+palette = 4=#66d9ef
+palette = 12=#66d9ef
+# "magenta"
+palette = 5=#ae81ff
+palette = 13=#ae81ff
+# "cyan"
+palette = 6=#fd971f
+palette = 14=#fd971f
+# "white"
+palette = 7=#fdfff1
+palette = 15=#fdfff1
+
+background = #272822
+foreground = #fdfff1
+cursor-color = #c0c1b5
+cursor-text = #c0c1b5
+selection-background = #57584f
+selection-foreground = #fdfff1
