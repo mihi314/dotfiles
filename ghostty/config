@@ -22,3 +22,6 @@ keybind = performable:ctrl+v=paste_from_clipboard
 keybind = super+ö=toggle_tab_overview
 
 shell-integration-features = ssh-env, ssh-terminfo
+
+# Disable programming ligatures
+font-feature = -calt
