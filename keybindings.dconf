@@ -1,3 +1,7 @@
 [/]
 move-to-monitor-left=['<Shift><Control>Zenkaku_Hankaku']
 move-to-monitor-right=['<Control>Zenkaku_Hankaku']
+move-to-workspace-left=['<Shift><Super>Page_Up']
+move-to-workspace-right=['<Shift><Super>Page_Down']
+switch-to-workspace-left=['<Super>Page_Up']
+switch-to-workspace-right=['<Super>Page_Down']
