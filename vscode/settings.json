@@ -141,5 +141,6 @@
   "git.blame.editorDecoration.enabled": false,
   "gitlens.ai.model": "vscode",
   "gitlens.ai.vscode.model": "copilot:gpt-4.1",
-  "workbench.editor.revealIfOpen": true
+  "workbench.editor.revealIfOpen": true,
+  "claudeCode.preferredLocation": "panel"
 }
