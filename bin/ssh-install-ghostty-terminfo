@@ -1,0 +1,12 @@
+#!/bin/bash
+set -Eeuo pipefail
+
+# The ghostty `shell-integration-features = ssh-terminfo feature is buggy for zsh, so using this instead.
+# (the newline in ind=\n gets dropped)
+
+if [[ $# -eq 0 ]]; then
+    echo "Usage: $(basename "$0") [ssh options] <host>" >&2
+    exit 1
+fi
+
+infocmp -0 -x xterm-ghostty | ssh "$@" -- tic -x -
