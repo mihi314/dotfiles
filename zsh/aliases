@@ -155,3 +155,6 @@ function tstamp () {
   awk '{ print strftime("%Y-%m-%dT%H:%M:%S%z"), "|", $0 ; fflush() }'
 }
 
+function local-ip() {
+  ip -4 route get 1.1.1.1 | grep -oP '(?<=src\s)\S+'
+}

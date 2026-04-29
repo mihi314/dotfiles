@@ -10,6 +10,8 @@
     ~/.tmux.conf: tmux.conf
     ~/.screenrc: screenrc
     ~/.config/htop/htoprc: htoprc
+    ~/.config/uv/uv.toml: uv.toml
+    ~/.npmrc: .npmrc
 
 - shell:
     - git submodule update --init --recursive

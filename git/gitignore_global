@@ -13,6 +13,7 @@ __pycache__
 *.sublime-project
 *.sublime-workspace
 log*.txt
+*.js.map
 
 # Compiled source #
 ###################

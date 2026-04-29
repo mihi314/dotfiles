@@ -3,6 +3,7 @@ set -Eeuo pipefail
 
 # The ghostty `shell-integration-features = ssh-terminfo feature is buggy for zsh, so using this instead.
 # (the newline in ind=\n gets dropped)
+# For ghostty 1.2, in 1.3 it's fixed.
 
 if [[ $# -eq 0 ]]; then
     echo "Usage: $(basename "$0") [ssh options] <host>" >&2

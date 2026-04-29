@@ -138,9 +138,12 @@
   "editor.smartSelect.selectLeadingAndTrailingWhitespace": false,
   "editor.smartSelect.selectSubwords": false,
   "bookmarks.keepBookmarksOnLineDelete": true,
-  "git.blame.editorDecoration.enabled": false,
-  "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
   "workbench.editor.revealIfOpen": true,
-  "claudeCode.preferredLocation": "panel"
+  "claudeCode.preferredLocation": "panel",
+  "claudeCode.useCtrlEnterToSend": true,
+  "typescript.experimental.useTsgo": true,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "gitlens.plusFeatures.enabled": false,
+  "git.blame.statusBarItem.template": "(${authorDateAgo})",
+  "diffEditor.ignoreTrimWhitespace": true
 }

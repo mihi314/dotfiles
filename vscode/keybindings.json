@@ -131,5 +131,14 @@
     {
         "key": "ctrl+alt+right",
         "command": "-workbench.action.moveEditorToNextGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+m",
+        "command": "workbench.action.toggleMaximizeEditorGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+m",
+        "command": "-workbench.action.toggleMaximizeEditorGroup",
+        "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
     }
 ]
