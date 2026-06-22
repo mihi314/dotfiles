@@ -79,3 +79,5 @@ local.properties
 
 # for vh dumps
 *.sql.gz
+
+**/.claude/settings.local.json

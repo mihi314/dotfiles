@@ -114,6 +114,7 @@
   "xstate.viewColumn": "active",
   "editor.autoClosingQuotes": "never",
   "editor.autoClosingBrackets": "never",
+  "editor.autoClosingComments": "never",
   "hediet.vscode-drawio.resizeImages": null,
   "editor.dragAndDrop": false,
   "editor.inlayHints.enabled": "offUnlessPressed",
@@ -145,5 +146,6 @@
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "gitlens.plusFeatures.enabled": false,
   "git.blame.statusBarItem.template": "(${authorDateAgo})",
-  "diffEditor.ignoreTrimWhitespace": true
+  "diffEditor.ignoreTrimWhitespace": true,
+  "task.allowAutomaticTasks": "off"
 }
