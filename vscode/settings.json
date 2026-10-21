@@ -139,6 +139,7 @@
   "editor.smartSelect.selectLeadingAndTrailingWhitespace": false,
   "editor.smartSelect.selectSubwords": false,
   "bookmarks.keepBookmarksOnLineDelete": true,
+  "git.blame.editorDecoration.enabled": false,
   "workbench.editor.revealIfOpen": true,
   "claudeCode.preferredLocation": "panel",
   "claudeCode.useCtrlEnterToSend": true,

@@ -133,6 +133,11 @@
         "command": "-workbench.action.moveEditorToNextGroup"
     },
     {
+        "key": "alt+q",
+        "command": "-extension.reflowParagraph",
+        "when": "editorTextFocus"
+    },
+    {
         "key": "ctrl+k ctrl+m",
         "command": "workbench.action.toggleMaximizeEditorGroup"
     },

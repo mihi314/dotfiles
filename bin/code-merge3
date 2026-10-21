@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+# code-merge3 — DIFFPROG for pacdiff; works as root (via sudo) or as user
+# pacdiff calls it as:
+#   3 args (three_way_diff): <pacnew> <base> <live>
+#   2 args (two_way_diff / after merge): <a> <b>
+set -u
+
+as_root=0
+(( EUID == 0 )) && [[ -n ${SUDO_USER-} ]] && as_root=1
+
+run_code() {
+    if (( as_root )); then
+        runuser -u "$SUDO_USER" -- code "$@"
+    else
+        code "$@"
+    fi
+}
+
+work=$(mktemp -d --tmpdir code-merge3.XXXXXX) || exit 1
+trap 'rm -rf "$work"' EXIT
+
+# Make the working copies owned by and writable for the invoking user
+hand_over() {
+    if (( as_root )); then
+        chown -R "$SUDO_USER": "$work"
+    fi
+    chmod -R u+rw "$work"
+}
+
+# Write a copy back into the original file only if it changed.
+write_back() {
+    if ! cmp -s "$1" "$2"; then
+        cat "$1" > "$2"
+        echo "code-merge3: updated $2" >&2
+    fi
+}
+
+if (( $# == 2 )); then
+    a="$work/left.$(basename "$1")"
+    b="$work/right.$(basename "$2")"
+    cp -- "$1" "$a"
+    cp -- "$2" "$b"
+    hand_over
+    run_code --wait --diff "$a" "$b"
+    write_back "$a" "$1"
+    write_back "$b" "$2"
+    exit 0
+fi
+
+if (( $# != 3 )); then
+    echo "code-merge3: expected 2 or 3 files, got $#" >&2
+    exit 1
+fi
+
+new=$1 base=$2 live=$3
+name=$(basename "$live")
+c_new="$work/pacnew.$name"
+c_base="$work/base.$name"
+c_live="$work/current.$name"
+result="$work/result.$name"
+
+cp -- "$new" "$c_new"
+cp -- "$base" "$c_base"
+cp -- "$live" "$c_live"
+
+# Pre-fill the result like git mergetool
+git merge-file -p --diff3 -L current -L base -L pacnew \
+    "$c_live" "$c_base" "$c_new" > "$result"
+
+hand_over
+run_code --wait --merge "$c_live" "$c_new" "$c_base" "$result"
+
+if grep -qE '^(<{7}|\|{7}|={7}|>{7})( |$)' "$result"; then
+    echo "code-merge3: unresolved conflict markers in result, not applying." >&2
+    exit 1
+fi
+
+write_back "$result" "$live"

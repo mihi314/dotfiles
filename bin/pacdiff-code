@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# pacdiff-code - pacdiff with VS Code
+set -eu
+
+export DIFFPROG=~/dotfiles/bin/code-merge3
+export MERGEPROG="git merge-file -p --diff3"
+sudo -E pacdiff -3
