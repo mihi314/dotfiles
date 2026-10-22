@@ -79,5 +79,6 @@ local.properties
 
 # for vh dumps
 *.sql.gz
+scripts/private
 
 **/.claude/settings.local.json

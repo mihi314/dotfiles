@@ -16,7 +16,7 @@ Host tpi
   User pi
 
 Host mpi
-  HostName 192.168.178.12
+  HostName 192.168.17.12
   User pi
   ServerAliveInterval 60
 
@@ -61,8 +61,28 @@ Host aur.archlinux.org
   IdentityFile ~/.ssh/aur
   User aur
 
+Host vh-develop
+  HostName 10.0.0.11
+  User root
+
 Host vh-test
-  HostName ticket-develop.test.vh-software-entwicklung.de
+  HostName 10.0.0.11
+  User root
+
+Host vh-kunden-01
+  HostName 10.0.0.3
+  User root
+
+Host vh-kunden-02
+  HostName 10.0.0.9
+  User root
+
+Host vh-infra-01
+  HostName 10.0.0.5
+  User root
+
+Host vh-build
+  HostName 10.0.0.6
   User root
 
 Host alkoholix
@@ -89,7 +109,7 @@ Host möschi
 # You should not hand-edit this section, unless you are deleting it.
 #
 Host miso.europe-west1-d.minecraft-448016
-    HostName 34.38.36.86
+    HostName 34.62.115.112
     IdentityFile /home/michi/.ssh/google_compute_engine
     UserKnownHostsFile=/home/michi/.ssh/google_compute_known_hosts
     HostKeyAlias=compute.1772921885389289393
