@@ -1,0 +1,12 @@
+{
+	// "theme": "Merge Dark.sublime-theme",
+	// "theme": "Monokai Plus.sublime-merge-theme",
+	"theme": "Monokai Mine.sublime-merge-theme",
+	"image_diff_style": "side-by-side",
+	"ignore_diff_white_space": false,
+	"update_check": false,
+	"side_bar_layout": "commit_graph_as_column",
+	"display_author_date": true,
+	"time_format": "24h",
+	"translate_tabs_to_spaces": true,
+}

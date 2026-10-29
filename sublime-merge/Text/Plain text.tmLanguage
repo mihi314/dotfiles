@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Overrides the built-in "Text/Plain text.tmLanguage" (whose patterns are empty) to scope
+	merge conflict markers, like the other built-in syntaxes do (see Diff.sublime-syntax#conflict-markers).
+-->
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>txt</string>
+	</array>
+	<key>name</key>
+	<string>Plain Text</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>match</key>
+			<string>^(&lt;{7})(?:\s+(\S.*?))?$\n?</string>
+			<key>name</key>
+			<string>meta.block.conflict.begin.diff</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.block.begin.diff</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.section.diff</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^(&gt;{7})(?:\s+(\S.*?))?$\n?</string>
+			<key>name</key>
+			<string>meta.block.conflict.end.diff</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.block.end.diff</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.section.diff</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^(\|{7}|={7})(?:\s+(\S.*?))?$\n?</string>
+			<key>name</key>
+			<string>meta.block.conflict.separator.diff</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.block.diff</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.section.diff</string>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.plain</string>
+</dict>
+</plist>

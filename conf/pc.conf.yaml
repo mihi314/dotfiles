@@ -24,13 +24,21 @@
         path: okular/shell.rc
 
     ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings:
-        path: sublime/Preferences.sublime-settings
+        path: sublime-text/Preferences.sublime-settings
     ~/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap:
-        path: sublime/Default (Linux).sublime-keymap
+        path: sublime-text/Default (Linux).sublime-keymap
     ~/.config/sublime-text/Packages/User/Preferences.sublime-settings:
-        path: sublime/Preferences.sublime-settings
+        path: sublime-text/Preferences.sublime-settings
     ~/.config/sublime-text/Packages/User/Default (Linux).sublime-keymap:
-        path: sublime/Default (Linux).sublime-keymap
+        path: sublime-text/Default (Linux).sublime-keymap
+
+    ~/.config/sublime-merge/Packages/User/Preferences.sublime-settings:
+        path: sublime-merge/Preferences.sublime-settings
+    ~/.config/sublime-merge/Packages/Theme - Monokai Mine:
+        path: sublime-merge/Theme - Monokai Mine
+    ~/.config/sublime-merge/Packages/Text:
+        path: sublime-merge/Text
+
 
     ~/.config/Code/User/settings.json:
         path: vscode/settings.json

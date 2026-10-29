@@ -1,0 +1,78 @@
+// Merged into the built-in "Color Scheme - Default/Monokai.sublime-color-scheme",
+// so the variables referenced here (red, red2, yellow2, ...) are defined there.
+{
+    "variables":
+    {
+        // Sublime has difficulty detecting purplish from bluish, etc.
+        // Define all colors to ensure correct colorish values for the theme.
+        "--redish": "var(red)",         // #f83535
+        "--orangish": "var(orange)",    // #fd9621
+        "--yellowish": "var(yellow)",   // #e7db74
+        "--greenish": "var(yellow2)",   // #a6e22c
+        "--cyanish": "var(blue)",       // #67d8ef
+        "--bluish": "var(blue)",        // #67d8ef (Monokai has a single blue)
+        "--pinkish": "var(red2)",       // #f92472
+        "--purplish": "var(purple)",    // #ac80ff
+    },
+    "globals":
+    {
+        // UI accent (focus rings, selected tabs, ...); Monokai has none of its own.
+        "accent": "var(yellow)",
+    },
+    // Merge-only scopes, modeled on Merge's own additions to Mariana.
+    "rules":
+    [
+        {
+            // Empty filler opposite added/removed lines in side-by-side diffs
+            "scope": "diff.fill",
+            "background": "var(black2)",
+        },
+        // Merge tool: left (ours) in blue, right (theirs) in orange
+        {
+            "scope": "diff.inserted.merge-left",
+            "background": "color(var(blue) s(50%) a(0.15))",
+            "foreground_adjust": "l(+ 5%)"
+        },
+        {
+            "scope": "diff.inserted.char.merge-left",
+            "background": "color(var(blue) s(65%) a(0.30))",
+            "foreground_adjust": "l(+ 10%)"
+        },
+        {
+            "scope": "diff.border.merge-left",
+            "background": "color(var(blue) a(0.50))",
+        },
+        {
+            "scope": "diff.inserted.merge-right",
+            "background": "color(var(orange) s(50%) a(0.15))",
+            "foreground_adjust": "l(+ 5%)"
+        },
+        {
+            "scope": "diff.inserted.char.merge-right",
+            "background": "color(var(orange) s(65%) a(0.30))",
+            "foreground_adjust": "l(+ 10%)"
+        },
+        {
+            "scope": "diff.border.merge-right",
+            "background": "color(var(orange) a(0.50))",
+        },
+        {
+            "scope": "diff.border.merge-conflict",
+            "background": "color(var(red2) a(0.50))",
+        },
+        {
+            "scope": "diff.border.merge-merged",
+            "background": "color(var(yellow3) a(0.30))",
+        },
+        {
+            // Conflict marker lines (<<<<<<< HEAD, ||||||| <sha>, =======, >>>>>>> <branch>), subdued
+            "scope": "meta.block.conflict",
+            "foreground": "color(var(white3) alpha(0.4))",
+        },
+        {
+            // Separator around each commit's block in the blame view
+            "scope": "blame.border",
+            "background": "var(yellow4)",
+        },
+    ],
+}
