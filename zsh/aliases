@@ -136,7 +136,13 @@ function reset-permissions() {
 }
 
 function sm() {
-    xdg-open "https://shortmarks.com/s.php?q=$*"
+    local log ret
+    log=$(mktemp) || return
+    xdg-open "https://shortmarks.com/s.php?q=$*" >"$log" 2>&1
+    ret=$?
+    (( ret )) && cat "$log" >&2
+    rm -f "$log"
+    return $ret
 }
 
 function auto-retry() {
